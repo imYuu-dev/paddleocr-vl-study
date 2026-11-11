@@ -1,0 +1,67 @@
+<!doctype html>
+<html lang="zh-CN">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content="沿一页文档理解 PaddleOCR-VL：从研究问题、区域定位和阅读顺序，到视觉语言识别、训练与实验。对应 14 页课堂汇报，支持离线学习。">
+  <title>PaddleOCR-VL · 论文学习课程 V3</title>
+  <link rel="icon" href="assets/course/favicon.svg" type="image/svg+xml">
+  <link rel="stylesheet" href="assets/course/course.css">
+  <script defer src="assets/course/modules.js"></script>
+  <script defer src="assets/course/course.js"></script>
+</head>
+<body>
+<a class="skip-link" href="#main">跳到正文</a>
+<header class="topbar">
+  <a class="brand" href="#m1"><span class="brand-mark">P</span><span>PaddleOCR-VL<small>论文学习课程 / V3</small></span></a>
+  <div class="top-actions">
+    <button class="quiet-button mobile-menu" id="navToggle" aria-expanded="false" aria-controls="sidebar">学习目录</button>
+    <button class="quiet-button" id="rehearsalToggle" aria-haspopup="dialog" aria-controls="rehearsalModal">脱稿演练</button>
+    <button class="quiet-button" id="referenceToggle" aria-expanded="true" aria-controls="reference">PPT 参考 <span aria-hidden="true">◧</span></button>
+    <button class="quiet-button more-toggle" id="toolsToggle" aria-expanded="false" aria-controls="studyTools">学习工具</button>
+  </div>
+  <div class="study-tools" id="studyTools" hidden>
+    <button class="mobile-rehearsal" data-rehearse aria-haspopup="dialog" aria-controls="rehearsalModal">进入脱稿演练</button>
+    <button id="exportProgress">导出进度与练习</button>
+    <label for="importProgress">导入原有进度</label><input type="file" id="importProgress" accept="application/json,.json" hidden>
+    <button id="printCourse">打印当前模块</button>
+    <button id="resetProgress">重置学习记录…</button>
+  </div>
+</header>
+<section class="hero">
+  <div><div class="eyebrow">机器学习方法 · CVPR 2026</div><h1>从一页文档，读懂一套模型</h1><p>先看机器需要交回什么，再沿着同一页文档理解区域定位、阅读顺序与精细识别。学完之后，回到 PPT，把方法和实验讲给别人听。</p><div class="hero-meta"><span>9 个模块</span><span>14 页 PPT 对照</span><span>原图与教学示例分开标记</span><span>可离线学习</span></div></div>
+  <div class="hero-route" aria-label="课程路径"><span>页面与任务</span><i>→</i><span>结构与内容</span><i>→</i><span>实验与判断</span></div>
+</section>
+<div class="layout" id="layout">
+  <aside class="sidebar" id="sidebar" aria-label="学习目录">
+    <div class="sidebar-top"><b>学习路线</b><button class="quiet-button mobile-menu" id="navClose" aria-label="关闭目录">×</button></div>
+    <div class="progress-label"><span id="progressText">0 / 9 已完成</span><span id="progressPercent">0%</span></div>
+    <div class="progress-track" role="progressbar" aria-label="模块完成进度" aria-valuemin="0" aria-valuemax="9" aria-valuenow="0"><div id="progressFill"></div></div>
+    <nav id="sideNav"></nav>
+    <p class="side-note">每节学完，试着说出：为什么需要这一步，输入是什么，输出交给谁。</p>
+    <a class="sources-shortcut" href="#sources">论文与来源说明 ↗</a>
+  </aside>
+  <main class="main" id="main" tabindex="-1"></main>
+  <aside class="reference" id="reference" aria-label="当前模块 PPT 参考"></aside>
+</div>
+<div class="drawer-shade" id="drawerShade" hidden></div>
+<section class="sources" id="sources">
+  <div class="eyebrow">阅读依据</div><h2>沿着原始证据，核对自己的理解</h2>
+  <p>课程结构对应现有 9 个模块与 14 页 PPT。技术与数值以 CVPR 正文和补充材料为主，官方实现与评测说明单独标注。原图仅做裁剪和渲染；教学图、关系矩阵及演示输出均未实际运行模型。</p>
+  <div class="source-legend"><span class="tag fact">论文事实</span><span class="tag implementation">官方实现</span><span class="tag teaching">教学简化</span><span class="tag analysis">分析判断</span></div>
+  <div class="source-links">
+    <a href="https://openaccess.thecvf.com/content/CVPR2026/papers/Cui_Boosting_Document_Parsing_Efficiency_and_Performance_with_Coarse-to-Fine_Visual_Processing_CVPR_2026_paper.pdf" target="_blank" rel="noopener">CVPR 2026 正文 ↗</a>
+    <a href="https://openaccess.thecvf.com/content/CVPR2026/supplemental/Cui_Boosting_Document_Parsing_CVPR_2026_supplemental.pdf" target="_blank" rel="noopener">补充材料 ↗</a>
+    <a href="https://www.paddleocr.ai/main/en/version3.x/pipeline_usage/PaddleOCR-VL.html" target="_blank" rel="noopener">官方 Pipeline 说明 ↗</a>
+    <a href="https://huggingface.co/PaddlePaddle/PaddleOCR-VL" target="_blank" rel="noopener">原版模型 ↗</a>
+    <a href="https://huggingface.co/PaddlePaddle/PP-DocLayoutV2" target="_blank" rel="noopener">布局组件 ↗</a>
+    <a href="https://github.com/opendatalab/OmniDocBench/tree/v1_5" target="_blank" rel="noopener">OmniDocBench v1.5 ↗</a>
+  </div>
+  <p class="muted">外部链接需要网络；课程正文、图表、PPT 预览和交互使用本地文件。已保留 V2 的进度键。更换浏览器或文件来源时，可通过学习工具导入导出记录。</p>
+</section>
+<footer>PaddleOCR-VL · 学网页里的方法，讲 PPT 上的主线</footer>
+<dialog id="imageModal" aria-labelledby="modalCaption"><div class="modal-toolbar"><span id="modalCaption"></span><div><button id="zoomOut" aria-label="缩小原图">−</button><span id="zoomLevel">100%</span><button id="zoomIn" aria-label="放大原图">＋</button><button id="modalClose" aria-label="关闭原图">关闭 ×</button></div></div><div class="modal-canvas" id="modalCanvas"><img id="modalImg" alt=""></div></dialog>
+<dialog id="rehearsalModal" aria-labelledby="rehearsalTitle"><div id="rehearsalContent"></div></dialog>
+<div class="toast" id="toast" role="status" aria-live="polite"></div>
+</body>
+</html>

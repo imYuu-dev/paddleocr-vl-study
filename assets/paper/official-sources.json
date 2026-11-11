@@ -1,0 +1,34 @@
+[
+  {
+    "name": "model-processor",
+    "url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL/raw/main/preprocessor_config.json",
+    "status": 200,
+    "sha256": "0c349d1210abce664bdba8986dc0637e94679b1fe90f13fcb18616a6466c4618",
+    "checked_at": "2026-11-10",
+    "use": "核对实现，不替代 CVPR 正文"
+  },
+  {
+    "name": "vlm-implementation",
+    "url": "https://huggingface.co/PaddlePaddle/PaddleOCR-VL/raw/main/modeling_paddleocr_vl.py",
+    "status": 200,
+    "sha256": "4b2f0c894be95b48fa6dcf18745b8307efe1290725a258f65c6c8b503b69c060",
+    "checked_at": "2026-11-10",
+    "use": "核对实现，不替代 CVPR 正文"
+  },
+  {
+    "name": "v1-pipeline",
+    "url": "https://raw.githubusercontent.com/PaddlePaddle/PaddleX/develop/paddlex/configs/pipelines/PaddleOCR-VL.yaml",
+    "status": 200,
+    "sha256": "d252c2d821981d4ea859c818de3831b0cdbdf4111d726d592a7365cad77d2328",
+    "checked_at": "2026-11-10",
+    "use": "核对实现，不替代 CVPR 正文"
+  },
+  {
+    "name": "v15-evaluation",
+    "url": "https://raw.githubusercontent.com/opendatalab/OmniDocBench/v1_5/configs/end2end.yaml",
+    "status": 200,
+    "sha256": "62f02a4303f03b4b000aed843ac15bc967a9e7d51957f3bb2699fd30540680a9",
+    "checked_at": "2026-11-10",
+    "use": "核对实现，不替代 CVPR 正文"
+  }
+]

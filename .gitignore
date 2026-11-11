@@ -1,0 +1,8 @@
+# Local review conversations and regenerated reading copies stay on this machine.
+/review/dsh-*.md
+/review/dsh-*.json
+/maintenance/review/
+__pycache__/
+*.pyc
+.DS_Store
+Thumbs.db

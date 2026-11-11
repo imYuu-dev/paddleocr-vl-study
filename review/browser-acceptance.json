@@ -1,0 +1,355 @@
+{
+  "viewports": [
+    {
+      "width": 1893,
+      "modules": [
+        {
+          "id": "m1",
+          "main": 1216,
+          "content": 1215,
+          "overflow": false,
+          "font": "17px"
+        },
+        {
+          "id": "m2",
+          "main": 1216,
+          "content": 1215,
+          "overflow": false,
+          "font": "17px"
+        },
+        {
+          "id": "m3",
+          "main": 1216,
+          "content": 1215,
+          "overflow": false,
+          "font": "17px"
+        },
+        {
+          "id": "m4",
+          "main": 1216,
+          "content": 1215,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m5",
+          "main": 1216,
+          "content": 1215,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m6",
+          "main": 1216,
+          "content": 1215,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m7",
+          "main": 1216,
+          "content": 1215,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m8",
+          "main": 1216,
+          "content": 1215,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m9",
+          "main": 1216,
+          "content": 1215,
+          "overflow": false,
+          "font": "17px"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "modules": [
+        {
+          "id": "m1",
+          "main": 1088,
+          "content": 1087,
+          "overflow": false,
+          "font": "17px"
+        },
+        {
+          "id": "m2",
+          "main": 1088,
+          "content": 1087,
+          "overflow": false,
+          "font": "17px"
+        },
+        {
+          "id": "m3",
+          "main": 1088,
+          "content": 1087,
+          "overflow": false,
+          "font": "17px"
+        },
+        {
+          "id": "m4",
+          "main": 1088,
+          "content": 1087,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m5",
+          "main": 1088,
+          "content": 1087,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m6",
+          "main": 1088,
+          "content": 1087,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m7",
+          "main": 1088,
+          "content": 1087,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m8",
+          "main": 1088,
+          "content": 1087,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m9",
+          "main": 1088,
+          "content": 1087,
+          "overflow": false,
+          "font": "17px"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "modules": [
+        {
+          "id": "m1",
+          "main": 1012.6666870117188,
+          "content": 1011,
+          "overflow": false,
+          "font": "17px"
+        },
+        {
+          "id": "m2",
+          "main": 1012.6666870117188,
+          "content": 1011,
+          "overflow": false,
+          "font": "17px"
+        },
+        {
+          "id": "m3",
+          "main": 1012.6666870117188,
+          "content": 1011,
+          "overflow": false,
+          "font": "17px"
+        },
+        {
+          "id": "m4",
+          "main": 1012.6666870117188,
+          "content": 1011,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m5",
+          "main": 1012.6666870117188,
+          "content": 1011,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m6",
+          "main": 1012.6666870117188,
+          "content": 1011,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m7",
+          "main": 1012.6666870117188,
+          "content": 1011,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m8",
+          "main": 1012.6666870117188,
+          "content": 1011,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m9",
+          "main": 1012.6666870117188,
+          "content": 1011,
+          "overflow": false,
+          "font": "17px"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "modules": [
+        {
+          "id": "m1",
+          "main": 350.66668701171875,
+          "content": 349,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m2",
+          "main": 350.66668701171875,
+          "content": 349,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m3",
+          "main": 350.66668701171875,
+          "content": 349,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m4",
+          "main": 350.66668701171875,
+          "content": 349,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m5",
+          "main": 350.66668701171875,
+          "content": 349,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m6",
+          "main": 350.66668701171875,
+          "content": 349,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m7",
+          "main": 350.66668701171875,
+          "content": 349,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m8",
+          "main": 350.66668701171875,
+          "content": 349,
+          "overflow": false,
+          "font": "16px"
+        },
+        {
+          "id": "m9",
+          "main": 350.66668701171875,
+          "content": 349,
+          "overflow": false,
+          "font": "16px"
+        }
+      ]
+    }
+  ],
+  "checks": [
+    "V2 完成记录和含特殊字符的练习正常读取",
+    "原有额外状态字段保留",
+    "桌面章节导航切换",
+    "架构模块点击更新输入输出",
+    "逐步数据流可以走到结构化输出",
+    "练习记录刷新后保留",
+    "自检选项刷新后保留",
+    "完成进度刷新后保留",
+    "答错后显示错误选项原因",
+    "测验可以重试并显示正确解释",
+    "脱稿模式隐藏讲述参考",
+    "脱稿模式可以按需展开提示",
+    "论文原图可以打开",
+    "原图可进一步放大并滚动查看",
+    "Escape 关闭原图",
+    "阅读顺序对照切换",
+    "候选顺序打乱后矩阵更新",
+    "VLM 任务与解码步骤切换",
+    "训练与推理对照",
+    "主实验分项切换与准确值",
+    "效率实验可分开查看显存",
+    "1893px m1 无整页横向溢出",
+    "1893px m2 无整页横向溢出",
+    "1893px m3 无整页横向溢出",
+    "1893px m4 无整页横向溢出",
+    "1893px m5 无整页横向溢出",
+    "1893px m6 无整页横向溢出",
+    "1893px m7 无整页横向溢出",
+    "1893px m8 无整页横向溢出",
+    "1893px m9 无整页横向溢出",
+    "1440px m1 无整页横向溢出",
+    "1440px m2 无整页横向溢出",
+    "1440px m3 无整页横向溢出",
+    "1440px m4 无整页横向溢出",
+    "1440px m5 无整页横向溢出",
+    "1440px m6 无整页横向溢出",
+    "1440px m7 无整页横向溢出",
+    "1440px m8 无整页横向溢出",
+    "1440px m9 无整页横向溢出",
+    "1280px m1 无整页横向溢出",
+    "1280px m2 无整页横向溢出",
+    "1280px m3 无整页横向溢出",
+    "1280px m4 无整页横向溢出",
+    "1280px m5 无整页横向溢出",
+    "1280px m6 无整页横向溢出",
+    "1280px m7 无整页横向溢出",
+    "1280px m8 无整页横向溢出",
+    "1280px m9 无整页横向溢出",
+    "390px m1 无整页横向溢出",
+    "390px m2 无整页横向溢出",
+    "390px m3 无整页横向溢出",
+    "390px m4 无整页横向溢出",
+    "390px m5 无整页横向溢出",
+    "390px m6 无整页横向溢出",
+    "390px m7 无整页横向溢出",
+    "390px m8 无整页横向溢出",
+    "390px m9 无整页横向溢出",
+    "移动端目录抽屉导航",
+    "移动端选中章节后收起目录",
+    "移动端按需展开 PPT 参考",
+    "移动端 PPT 缩略图可放大",
+    "移动端 PPT 参考可收起",
+    "素材可访问：assets/paper/figure-s5.png",
+    "素材可访问：assets/paper/figure-2.png",
+    "素材可访问：assets/paper/figure-3.png",
+    "素材可访问：assets/paper/figure-4-detection.png",
+    "素材可访问：assets/paper/figure-4.png",
+    "素材可访问：assets/paper/figure-s12.png",
+    "素材可访问：assets/paper/figure-3-vlm.png",
+    "素材可访问：assets/paper/figure-s1.png",
+    "素材可访问：assets/paper/table-1.png",
+    "素材可访问：assets/paper/table-2.png",
+    "素材可访问：assets/paper/table-s2.png",
+    "素材可访问：assets/paper/table-7.png",
+    "素材可访问：assets/slides/p06.jpg",
+    "无运行期 JavaScript 错误"
+  ],
+  "errors": []
+}

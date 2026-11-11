@@ -1,0 +1,210 @@
+[
+  {
+    "file": "assets/paper/figure-2.png",
+    "source": "正文",
+    "page": 3,
+    "figure": "Figure 2",
+    "crop_points": [
+      58,
+      64,
+      554,
+      246
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "304f3e340e7dd6ed85727106af1d4d3d78590ea3af33972959bbb6c96daf429b",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "1fd67b101e15d05db1484ff3fdce7a09a18205b943ded589ff39d6c03ea67099"
+  },
+  {
+    "file": "assets/paper/figure-3.png",
+    "source": "正文",
+    "page": 4,
+    "figure": "Figure 3",
+    "crop_points": [
+      58,
+      72,
+      554,
+      283
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "304f3e340e7dd6ed85727106af1d4d3d78590ea3af33972959bbb6c96daf429b",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "58b30afc47618df659b1656a0dd8ab037ee489b3a4bc83a49bf5ace9795613fc"
+  },
+  {
+    "file": "assets/paper/figure-4.png",
+    "source": "正文",
+    "page": 5,
+    "figure": "Figure 4",
+    "crop_points": [
+      58,
+      73,
+      554,
+      221
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "304f3e340e7dd6ed85727106af1d4d3d78590ea3af33972959bbb6c96daf429b",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "aa08fcc88f8018f3e115cf53b6262c91fab348ace2c3ab7887d45b640fc3d5bc"
+  },
+  {
+    "file": "assets/paper/figure-4-detection.png",
+    "source": "正文",
+    "page": 5,
+    "figure": "Figure 4 局部：检测与输入嵌入",
+    "crop_points": [
+      58,
+      73,
+      269,
+      159
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "304f3e340e7dd6ed85727106af1d4d3d78590ea3af33972959bbb6c96daf429b",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "4a73d386221e14e0057fce8cb0d541cdd07a5e524a5959cca6e862010e7c3f38"
+  },
+  {
+    "file": "assets/paper/figure-4-order.png",
+    "source": "正文",
+    "page": 5,
+    "figure": "Figure 4 局部：关系头与后处理",
+    "crop_points": [
+      58,
+      159,
+      554,
+      221
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "304f3e340e7dd6ed85727106af1d4d3d78590ea3af33972959bbb6c96daf429b",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "e2a16b576c32611499211bda9d451c0c0727778d5f20f3dc9cd9d9f4b52aa5d2"
+  },
+  {
+    "file": "assets/paper/table-1.png",
+    "source": "正文",
+    "page": 6,
+    "figure": "Table 1",
+    "crop_points": [
+      62,
+      239,
+      291,
+      342
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "304f3e340e7dd6ed85727106af1d4d3d78590ea3af33972959bbb6c96daf429b",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "ec6a00bab32ca100046a2185ab15981afe7a2f3e701f2d234a08ea10c8c6f2e9"
+  },
+  {
+    "file": "assets/paper/table-2.png",
+    "source": "正文",
+    "page": 7,
+    "figure": "Table 2",
+    "crop_points": [
+      58,
+      57,
+      554,
+      325
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "304f3e340e7dd6ed85727106af1d4d3d78590ea3af33972959bbb6c96daf429b",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "568caab1f3fd1fc6f7d46aaa40eb4fd39c9c971e7767d661b92452ab67e60610"
+  },
+  {
+    "file": "assets/paper/table-7.png",
+    "source": "正文",
+    "page": 8,
+    "figure": "Table 7",
+    "crop_points": [
+      316,
+      297,
+      554,
+      365
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "304f3e340e7dd6ed85727106af1d4d3d78590ea3af33972959bbb6c96daf429b",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "b21085297b968896b773bde53d310c4c7e6a90c239e02ec97bc15a8b5373d4d8"
+  },
+  {
+    "file": "assets/paper/figure-s1.png",
+    "source": "补充材料",
+    "page": 2,
+    "figure": "Figure S1",
+    "crop_points": [
+      58,
+      66,
+      554,
+      240
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "cef2ef164cc8b0eda84dd782d4c665310b6a233c76079b7b1f597dd99d99a269",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "dc5d75b8e7d2c51af7c6eabbc552c4844240d25ff6af4c9601999990d4869d1f"
+  },
+  {
+    "file": "assets/paper/table-s2.png",
+    "source": "补充材料",
+    "page": 4,
+    "figure": "Table S2",
+    "crop_points": [
+      316,
+      611,
+      554,
+      680
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "cef2ef164cc8b0eda84dd782d4c665310b6a233c76079b7b1f597dd99d99a269",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "765d7fe6b33aac32a37794459e120f2e6249118d2249b19d4804a904a0e36af4"
+  },
+  {
+    "file": "assets/paper/figure-s5.png",
+    "source": "补充材料",
+    "page": 7,
+    "figure": "Figure S5",
+    "crop_points": [
+      58,
+      94,
+      554,
+      692
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "cef2ef164cc8b0eda84dd782d4c665310b6a233c76079b7b1f597dd99d99a269",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "8ac0c7eb9881aca81f16c29a0596dee33c876596088216ba5f25ec7a52aa5c97"
+  },
+  {
+    "file": "assets/paper/figure-s12.png",
+    "source": "补充材料",
+    "page": 14,
+    "figure": "Figure S12",
+    "crop_points": [
+      58,
+      94,
+      554,
+      679
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "cef2ef164cc8b0eda84dd782d4c665310b6a233c76079b7b1f597dd99d99a269",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。",
+    "asset_sha256": "83777b6d6d8cdcd67abf288ce0e5199475bef9fcae2c91f68a362fa08caff3ec"
+  },
+  {
+    "file": "assets/paper/figure-3-vlm.png",
+    "source": "正文",
+    "page": 4,
+    "figure": "Figure 3 局部：元素识别模型",
+    "crop_points": [
+      272,
+      80,
+      432,
+      167
+    ],
+    "alteration": "仅裁剪与渲染，未改写图内内容",
+    "source_sha256": "304f3e340e7dd6ed85727106af1d4d3d78590ea3af33972959bbb6c96daf429b",
+    "asset_sha256": "52de65ac62bcd1b9929827c0fec637353a6d6bd982128da111ac555e47764c0f",
+    "license_note": "原论文图表，用于论文教学；保留原图号与引用。"
+  }
+]
