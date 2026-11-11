@@ -1,0 +1,292 @@
+{
+  "checks": [
+    "9 个模块导航存在",
+    "原有练习与特殊字符保留",
+    "原有进度额外字段保留",
+    "学习目标不抢在正文前",
+    "教学文档出现前有连续文字铺垫",
+    "旧的突兀场景已移除",
+    "学习目标位于教学正文之后",
+    "教学文档放大正常",
+    "整体流程示例从原始页面开始",
+    "1893px m1 无整页横向溢出",
+    "1893px m2 无整页横向溢出",
+    "1893px m3 无整页横向溢出",
+    "1893px m4 无整页横向溢出",
+    "1893px m5 无整页横向溢出",
+    "1893px m6 无整页横向溢出",
+    "1893px m7 无整页横向溢出",
+    "1893px m8 无整页横向溢出",
+    "1893px m9 无整页横向溢出",
+    "1440px m1 无整页横向溢出",
+    "1440px m2 无整页横向溢出",
+    "1440px m3 无整页横向溢出",
+    "1440px m4 无整页横向溢出",
+    "1440px m5 无整页横向溢出",
+    "1440px m6 无整页横向溢出",
+    "1440px m7 无整页横向溢出",
+    "1440px m8 无整页横向溢出",
+    "1440px m9 无整页横向溢出",
+    "1280px m1 无整页横向溢出",
+    "1280px m2 无整页横向溢出",
+    "1280px m3 无整页横向溢出",
+    "1280px m4 无整页横向溢出",
+    "1280px m5 无整页横向溢出",
+    "1280px m6 无整页横向溢出",
+    "1280px m7 无整页横向溢出",
+    "1280px m8 无整页横向溢出",
+    "1280px m9 无整页横向溢出",
+    "390px m1 无整页横向溢出",
+    "390px m2 无整页横向溢出",
+    "390px m3 无整页横向溢出",
+    "390px m4 无整页横向溢出",
+    "390px m5 无整页横向溢出",
+    "390px m6 无整页横向溢出",
+    "390px m7 无整页横向溢出",
+    "390px m8 无整页横向溢出",
+    "390px m9 无整页横向溢出",
+    "手机目录导航后自动收起",
+    "手机脱稿演练面板保留",
+    "所有论文图表与 PPT 图片可访问",
+    "无运行期 JavaScript 错误"
+  ],
+  "viewports": [
+    {
+      "width": 1893,
+      "modules": [
+        {
+          "id": "m1",
+          "overflow": false,
+          "main": 1216,
+          "font": "17px"
+        },
+        {
+          "id": "m2",
+          "overflow": false,
+          "main": 1216,
+          "font": "17px"
+        },
+        {
+          "id": "m3",
+          "overflow": false,
+          "main": 1216,
+          "font": "17px"
+        },
+        {
+          "id": "m4",
+          "overflow": false,
+          "main": 1216,
+          "font": "17px"
+        },
+        {
+          "id": "m5",
+          "overflow": false,
+          "main": 1216,
+          "font": "17px"
+        },
+        {
+          "id": "m6",
+          "overflow": false,
+          "main": 1216,
+          "font": "17px"
+        },
+        {
+          "id": "m7",
+          "overflow": false,
+          "main": 1216,
+          "font": "17px"
+        },
+        {
+          "id": "m8",
+          "overflow": false,
+          "main": 1216,
+          "font": "17px"
+        },
+        {
+          "id": "m9",
+          "overflow": false,
+          "main": 1216,
+          "font": "17px"
+        }
+      ]
+    },
+    {
+      "width": 1440,
+      "modules": [
+        {
+          "id": "m1",
+          "overflow": false,
+          "main": 1088,
+          "font": "17px"
+        },
+        {
+          "id": "m2",
+          "overflow": false,
+          "main": 1088,
+          "font": "17px"
+        },
+        {
+          "id": "m3",
+          "overflow": false,
+          "main": 1088,
+          "font": "17px"
+        },
+        {
+          "id": "m4",
+          "overflow": false,
+          "main": 1088,
+          "font": "17px"
+        },
+        {
+          "id": "m5",
+          "overflow": false,
+          "main": 1088,
+          "font": "17px"
+        },
+        {
+          "id": "m6",
+          "overflow": false,
+          "main": 1088,
+          "font": "17px"
+        },
+        {
+          "id": "m7",
+          "overflow": false,
+          "main": 1088,
+          "font": "17px"
+        },
+        {
+          "id": "m8",
+          "overflow": false,
+          "main": 1088,
+          "font": "17px"
+        },
+        {
+          "id": "m9",
+          "overflow": false,
+          "main": 1088,
+          "font": "17px"
+        }
+      ]
+    },
+    {
+      "width": 1280,
+      "modules": [
+        {
+          "id": "m1",
+          "overflow": false,
+          "main": 1013,
+          "font": "17px"
+        },
+        {
+          "id": "m2",
+          "overflow": false,
+          "main": 1013,
+          "font": "17px"
+        },
+        {
+          "id": "m3",
+          "overflow": false,
+          "main": 1013,
+          "font": "17px"
+        },
+        {
+          "id": "m4",
+          "overflow": false,
+          "main": 1013,
+          "font": "17px"
+        },
+        {
+          "id": "m5",
+          "overflow": false,
+          "main": 1013,
+          "font": "17px"
+        },
+        {
+          "id": "m6",
+          "overflow": false,
+          "main": 1013,
+          "font": "17px"
+        },
+        {
+          "id": "m7",
+          "overflow": false,
+          "main": 1013,
+          "font": "17px"
+        },
+        {
+          "id": "m8",
+          "overflow": false,
+          "main": 1013,
+          "font": "17px"
+        },
+        {
+          "id": "m9",
+          "overflow": false,
+          "main": 1013,
+          "font": "17px"
+        }
+      ]
+    },
+    {
+      "width": 390,
+      "modules": [
+        {
+          "id": "m1",
+          "overflow": false,
+          "main": 351,
+          "font": "16px"
+        },
+        {
+          "id": "m2",
+          "overflow": false,
+          "main": 351,
+          "font": "16px"
+        },
+        {
+          "id": "m3",
+          "overflow": false,
+          "main": 351,
+          "font": "16px"
+        },
+        {
+          "id": "m4",
+          "overflow": false,
+          "main": 351,
+          "font": "16px"
+        },
+        {
+          "id": "m5",
+          "overflow": false,
+          "main": 351,
+          "font": "16px"
+        },
+        {
+          "id": "m6",
+          "overflow": false,
+          "main": 351,
+          "font": "16px"
+        },
+        {
+          "id": "m7",
+          "overflow": false,
+          "main": 351,
+          "font": "16px"
+        },
+        {
+          "id": "m8",
+          "overflow": false,
+          "main": 351,
+          "font": "16px"
+        },
+        {
+          "id": "m9",
+          "overflow": false,
+          "main": 351,
+          "font": "16px"
+        }
+      ]
+    }
+  ],
+  "errors": []
+}

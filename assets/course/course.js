@@ -15,8 +15,9 @@ function renderNav(){$('#sideNav').innerHTML=modules.map((m,i)=>`<button class="
 function quizOrder(q){return q.displayOrder||q.opts.map((_,i)=>i);}
 function quizHTML(m,mi){return m.quiz.map((q,qi)=>`<div class="question" data-question="${qi}"><p>${qi+1}. ${esc(q.q)}</p>${quizOrder(q).map((oi,di)=>`<button class="option" data-answer="${oi}" data-module="${mi}" data-quiz="${qi}">${String.fromCharCode(65+di)}. ${esc(q.opts[oi])}</button>`).join('')}<div class="feedback" id="fb-${mi}-${qi}" aria-live="polite"></div></div>`).join('');}
 function moduleHTML(m,i){const done=state.done.includes(m.id);return `<article class="module" id="${m.id}" aria-labelledby="title-${m.id}">
- <header class="module-head"><div class="module-kicker">MODULE ${m.num} / 09</div><h2 id="title-${m.id}">${esc(m.title)}</h2><p class="module-sub">${esc(m.lead)}</p><div class="module-meta"><span>对应 PPT：${esc(m.ppt)}</span><span>建议学习：${esc(m.duration)}</span></div><div class="goal"><b>学完这一节：</b>${esc(m.goal)}</div></header>
+ <header class="module-head"><div class="module-kicker">MODULE ${m.num} / 09</div><h2 id="title-${m.id}">${esc(m.title)}</h2><p class="module-sub">${esc(m.lead)}</p><div class="module-meta"><span>对应 PPT：${esc(m.ppt)}</span><span>建议学习：${esc(m.duration)}</span></div></header>
  <div class="article">${m.sections.map((s,j)=>`<section class="lesson-section"><h3><span class="section-num">${String(j+1).padStart(2,'0')}</span>${esc(s.title)}</h3>${s.body}</section>`).join('')}
+ <div class="goal goal-after"><b>学完后回看：</b>${esc(m.goal)}</div>
  <div class="takeaway">${esc(m.takeaway)}</div>
  <section class="talk-card"><div class="talk-label">回到 ${esc(m.ppt)} · 怎样讲给同学听</div><div class="reference-copy"><p>${esc(m.talk)}</p></div><button class="reveal-reference" data-reveal>显示／隐藏讲述参考</button></section>
  <div class="bridge"><b>${i===8?'再次串联：':'下一步：'}</b>${esc(m.bridge)}</div>

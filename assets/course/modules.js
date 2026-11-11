@@ -2,37 +2,37 @@ const modules = [
   {
     "id": "m1",
     "num": "01",
-    "title": "先看一页文档：我们希望机器交回什么？",
+    "title": "一页论文，怎样变成可继续使用的内容",
     "ppt": "P02（P01 为封面）",
     "duration": "约 10 分钟",
     "slides": [
       1,
       2
     ],
-    "lead": "你把一份扫描论文交给计算机，希望复制正文、检索公式，也希望把表格继续交给程序使用。只交回一长串文字，够用吗？",
-    "goal": "能从具体页面说明文档解析要保留哪些信息，并解释三类现有方案为什么仍有困难。",
+    "lead": "这一节先看一页文档：人读它时在利用什么，程序接手后又要补上哪些记录。",
+    "goal": "能沿一页论文说明文档解析要恢复哪些内容与关系，并解释三类做法各自把计算放在哪里、要付出什么代价。",
     "sections": [
       {
-        "title": "人眼读页面时，已经在判断结构",
-        "body": "<p>先看下面这页为课程绘制的文档。你会先看标题，再顺着左栏正文往下读；遇到公式，会把上下标当成公式结构；看到表格，会把每个数字和相应的行、列联系起来。眼睛没有把页面当成一张均匀的像素网格。</p><div data-widget=\"document\" data-stage=\"0\"></div><p>现在切换“只有文字”和“结构化结果”。字句即使都在，表格行列关系和段落顺序一旦丢失，程序仍可能把数值归给错误的方法。<strong>页面解析需要同时恢复内容、元素类型和阅读关系。</strong></p><div class=\"evidence-note\"><span>教学简化</span>这页文档及后面的坐标、识别输出均为教学示例，不是论文测试样本，也没有实际运行模型。</div>"
+        "title": "一页论文，人怎样读，程序收到什么",
+        "body": "<p>先看人读一份文档时发生了什么。读者会先找标题，确定从哪里开始；遇到双栏，会先读左栏再转到右栏；看到表格，会沿行和列把数值与对应的方法连起来；看到公式，会把上下标和分式当成一个整体。阅读不是先认完所有字再理解页面，版面关系一直在参与。</p><p>当程序要批量整理一批论文，或对照不同论文中的方法与实验分数时，光有一串字就不够。程序需要知道哪一段是标题、哪一段是正文，表格的哪一行属于哪个方法，公式的上下标怎样结合，以及这些内容按什么顺序读。它要保存的不只是文字，还有文字之间的结构关系。</p><p>程序拿到的常常是一页图像：扫描页、拍照页，或由页面渲染出的图像；电子 PDF 有时带文字层，但文字层主要记录字符和位置，不自动给出标题层级、段落边界、单元格和阅读顺序。</p><p>下面这页是课程为讲解准备的教学示例：同一页上有标题、左右两栏正文、表格、公式、图表和图注。先看这些部分各自占什么位置、彼此怎样相邻，不必急着记名称。</p><div class=\"evidence-note\"><span>教学简化</span>这页文档及后面的坐标、识别输出均为教学示例，不是论文测试样本，也没有实际运行模型。</div><div data-widget=\"document\" data-stage=\"0\"></div><p>看图时先看跨栏标题，再读左栏正文，接着看公式的上下标，然后看表格的行列，转到右栏正文，最后看图表和图注。它们不是一堆同样大小的文字块：标题跨栏，正文分栏，表格有行列，公式有上下标。程序要恢复的，正是这些部分以及它们之间的关系。</p>"
       },
       {
-        "title": "把目标写成计算机能够使用的输出",
-        "body": "<p>文字按段落保存；公式要用能保留上下标和分式的写法，例如用 x^{2} 记录 x 的平方；表格要保留行列和合并单元格。页面还要记录这些元素的阅读顺序。Markdown 用简短标记组织标题、段落等内容，JSON 用字段与列表保存程序要用的数据。两种文件都需要可靠的内容与结构。</p><p>这里先把“读懂”限定为论文的文档解析任务。解析出公式和表格，并不自动意味着模型已经证明公式，或解释了表格背后的科学结论。</p>"
+        "title": "把“读懂”落成能继续使用的结果",
+        "body": "<p>这类任务通常称为文档解析：从页面恢复可继续使用的内容与结构。内容指文字、公式、表格里的值；结构指元素类型、边界、单元格关系、公式语法和阅读顺序。只记录内容，程序得到一长串字；只记录布局，程序还不知道每个区域里写了什么。两者要一起保存，后面的检索、对照和重建才有依据。</p><p>保存格式可以不同。Markdown 用简短标记组织标题、段落、列表和表格，适合人读和继续编辑；JSON 用字段与列表保存程序要用的数据，适合检索、对照和入库。两种文件都需要可靠的内容与结构，差别主要在表达方式。</p><p>补充材料给出真实文档的解析案例。先看左侧原页，再看右侧 Markdown：标题、段落、表格和公式在输出里各自落在什么位置。</p><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-s5.png\" data-caption=\"补充材料 Figure S5 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure S5\"><img src=\"assets/paper/figure-s5.png\" alt=\"补充材料 Figure S5\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure S5</b>　补充材料展示了书籍、教材与学术论文的布局和 Markdown 输出。先看原页与解析结果如何对应。</figcaption></figure><p>从这组对照可以看到，解析不是把页面压成一串字，而是把页面上的元素和它们的关系重新组织。课程后面的示例页是合成的，Figure S5 是论文补充材料中的真实案例，两者要分开看。</p><p>这里先把“读懂”限定为论文的文档解析任务。解析出公式和表格，并不自动意味着模型已经证明公式，或解释了表格背后的科学结论。</p>"
       },
       {
-        "title": "现有方法怎样把页面变成这些结果",
-        "body": "<p>OCR 指从图像中识别文字。Pipeline 指把多个处理步骤串成流程。VLM 是“视觉语言模型”：它接收图像信息和文字指令，再生成文字或结构化序列。先记住三种处理方式，再比较它们在哪里遇到困难。</p><p class=\"table-hint\">左右滑动，查看表格的全部列。</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"可横向滚动的课程表格\"><table><thead><tr><th>方法</th><th>处理方式</th><th>论文指出的困难</th></tr></thead><tbody><tr><td>传统 Pipeline</td><td>布局检测后，分别调用文字、表格、公式等专用模型，再组合结果。</td><td>模块多，前面的漏检或错裁会传到后面。</td></tr><tr><td>通用 VLM</td><td>让视觉语言模型读取整页并生成输出。</td><td>高分辨率输入成本高；复杂页面可能编出原图没有的内容，或识别错误、顺序混乱。</td></tr><tr><td>专用文档 VLM</td><td>为文档任务设计整页生成或先定位再识别的流程。</td><td>整页输出很长时，生成难度与开销增加；让模型直接生成元素坐标时，在密集页面可能把框的位置写偏。</td></tr></tbody></table></div><p>VLM 这个名称说明了输入输出的形式，并不保证复杂页面一定解析正确。三类方法也有交叉：专用 VLM 同样可以放进 Pipeline。</p><div class=\"evidence-note\"><span>论文事实</span>上述分类和不足概括自正文 §1–2，描述的是论文讨论的代表方法，不能据此断言每一个同类系统都有相同问题。</div>"
+        "title": "三条路线：把计算放在不同位置",
+        "body": "<p>要把页面变成这样的结果，现有做法不止一条。下面三种是论文讨论的代表路线。它们都接收页面图像，也都要输出内容与结构，区别在于把哪些工作交给哪个模块，以及计算花在什么地方。</p><p>OCR 指从图像中识别文字。Pipeline 指把多个处理步骤串成流程。VLM 是视觉语言模型：它接收图像信息和文字指令，再生成文字或结构化序列。先有这三个名称，再看它们怎样分工。</p><p class=\"table-hint\">左右滑动，查看表格的全部列。</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"可横向滚动的课程表格\"><table><thead><tr><th>方法</th><th>处理方式</th><th>论文讨论的困难</th></tr></thead><tbody><tr><td>传统 Pipeline</td><td>布局检测后，分别调用文字、表格、公式等专用模型，再组合结果。</td><td>模块多，前面的漏检或错裁会传到后面。</td></tr><tr><td>通用 VLM</td><td>让视觉语言模型读取整页并生成输出。</td><td>高分辨率输入成本高；复杂页面可能编出原图没有的内容，或识别错误、顺序混乱。</td></tr><tr><td>专用文档 VLM</td><td>为文档任务设计整页生成或先定位再识别的流程。</td><td>整页输出很长时，生成难度与开销增加；让模型直接生成元素坐标时，在密集页面可能把框的位置写偏。</td></tr></tbody></table></div><p>这三条路线不是先后替换的历史阶段，也可以混合。传统 Pipeline 同样可能先做版面分析、再裁出区域；专用 VLM 也可以放进 Pipeline。表格里的困难是论文对代表方法的讨论，不是给每一个同类系统下定论。</p><p>把三条路线放在一起，会看到一个共同的取舍：整页看得越清楚，输入越多、计算越重；只看局部，又可能漏掉内容。论文关注的不是“哪种路线绝对更好”，而是在准确率与效率之间把计算放在哪里。</p><div class=\"evidence-note\"><span>论文事实</span>上述分类和不足概括自正文 §1–2，描述的是论文讨论的代表方法，不能据此断言每一个同类系统都有相同问题。</div>"
       },
       {
-        "title": "作者进一步追问：精细识别的计算该用在哪里？",
-        "body": "<p>无论使用多少个模型，小字、密集公式和表格线都需要足够清楚的图像。但一页文档里也有页边、空白和不需要转录的装饰。作者因此追问：能否先找到真正要识别的区域，再把精细识别的计算分配给它们？论文把这条先定范围、再读细节的路线称为 Coarse-to-Fine，即先粗后细。下一模块检查这个判断的依据。</p><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-s5.png\" data-caption=\"补充材料 Figure S5 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure S5\"><img src=\"assets/paper/figure-s5.png\" alt=\"补充材料 Figure S5\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure S5</b>　补充材料展示了书籍、教材与学术论文的布局和 Markdown 输出。先看原页与解析结果如何对应。</figcaption></figure>"
+        "title": "问题收窄：精细识别的计算该用在哪里？",
+        "body": "<p>小字、密集公式和表格线都需要足够清楚的图像。一页文档里同时有页边、空白和不需要转录的装饰；如果整页都按最高清晰度处理，大量计算会花在与任务无关的地方。</p><p>作者因此把问题收窄：能否先找到真正要识别的区域，再把精细识别的计算分配给它们？这条先定范围、再读细节的路线，论文称为 Coarse-to-Fine，即先粗后细。它不假设所有页面都能靠同一条规则切分；它把“看哪里”和“看清什么”分成两个阶段。</p><p>这条路线是否成立，还要看两个事实：页面上的有效内容是否真的分布不均，提高分辨率又究竟增加了什么。</p>"
       }
     ],
     "example": "",
-    "takeaway": "文档解析要交回可继续使用的内容与结构；文字读对只是其中一项要求。",
-    "talk": "P02 先指着页面说出读者想拿到的结果，再用双栏错序或表格行列丢失说明困难。三类方案只讲各自处理方式和一个相关问题，最后把听众带到“计算应分配给哪些区域”。",
-    "bridge": "上一模块确定了输出要求。现在看输入：为了保住小字和公式细节，我们必须让图像足够清楚，但页面的每一部分都值得同样处理吗？",
+    "takeaway": "文档解析要交回可继续使用的内容与结构；文字读对只是其中一项，页面顺序与元素关系也要有记录。",
+    "talk": "P02 先从那页合成文档讲起：人读时用了哪些版面线索，程序缺的又是哪些记录。再用 Figure S5 对照真实解析结果，最后把三类路线说成对同一成本问题的不同回答，落到 Coarse-to-Fine。",
+    "bridge": "整页保持高分辨率会把空白和装饰一起送进模型；只读局部又可能漏内容。先找区域能否减少无关输入，取决于页面上的内容是否真的集中，以及筛选要付出什么代价。",
     "facts": "正文 §1–2：任务定义、三类方法及其限制；补充材料 Figure S5：真实解析案例",
     "analysis": "教学图和交互均有单独标记。示例输出未经模型运行；对方法边界的推断不作为论文实测结论。",
     "quiz": [
@@ -97,7 +97,7 @@ const modules = [
         ]
       }
     ],
-    "practice": "不使用模型名称，向同学解释这页文档为什么不能只提取一长串文字。再说出正文、表格、公式各需要保留什么。",
+    "practice": "不看提示，用这页文档说明：程序要保存哪些内容与关系；为什么只做文字识别不够；三类路线各自把计算放在哪里。",
     "slidesData": [
       {
         "n": 1,
@@ -112,7 +112,7 @@ const modules = [
       "正文 §1–2：任务定义、三类方法及其限制",
       "补充材料 Figure S5：真实解析案例"
     ],
-    "shortTitle": "文档解析的任务"
+    "shortTitle": "一页论文的任务"
   },
   {
     "id": "m2",
@@ -123,20 +123,20 @@ const modules = [
     "slides": [
       3
     ],
-    "lead": "上一模块确定了输出要求。现在看输入：为了保住小字和公式细节，我们必须让图像足够清楚，但页面的每一部分都值得同样处理吗？",
+    "lead": "先看两个可观察的事实：页面上的有效内容是否真的分布不均；提高分辨率究竟增加了什么。把这两件事放在一起，才能判断“先找区域”是不是一条有依据的路线。",
     "goal": "能区分面积、视觉 Token 和计算开销，说明 Coarse-to-Fine 的动机及成立条件。",
     "sections": [
       {
-        "title": "先看观察：页面上的有效区域分布不均",
-        "body": "<figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-2.png\" data-caption=\"正文 Figure 2 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure 2\"><img src=\"assets/paper/figure-2.png\" alt=\"正文 Figure 2\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure 2</b>　先看左侧页面，再看中间各类文档的面积比例，最后看右侧两条处理路径。</figcaption></figure><p>“有效视觉区域”指当前解析任务需要读取的内容所在范围。论文正文说明，PPT 的有效面积约占 39%，报纸约占 60%。即使是内容更密的报纸，仍有约四成面积无需按同样方式精细识别。这项统计为先筛选区域提供了动机。</p><p>图中把有效与冗余部分画成两种颜色。这里采用正文的面积解释：<strong>39.3% 是示例类别的有效面积比例，不能直接当成节省 60.7% 推理时间的测量。</strong>有效区域也由解析任务决定，例如图表中的数据需要识别时，图表就是有效内容。</p>"
+        "title": "先看论文的观察：有效区域分布不均",
+        "body": "<p>先看论文给出的面积统计。Figure 2 左侧是一页示例，中间把不同文档类型中需要读取的区域与其余部分分开，右侧画出两条处理路径。第一遍只比较中间的面积比例和右侧两条路径的差别。</p><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-2.png\" data-caption=\"正文 Figure 2 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure 2\"><img src=\"assets/paper/figure-2.png\" alt=\"正文 Figure 2\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure 2</b>　先看左侧页面，再看中间各类文档的面积比例，最后看右侧两条处理路径。</figcaption></figure><p>“有效视觉区域”指当前解析任务需要读取的内容所在范围。论文正文说明，PPT 的有效面积约占 39%，报纸约占 60%。即使是内容更密的报纸，仍有约四成面积无需按同样方式精细识别。这项统计为先筛选区域提供了动机。</p><p>图中把有效与冗余部分画成两种颜色。这里采用正文的面积解释：<strong>39.3% 是示例类别的有效面积比例，不能直接当成节省 60.7% 推理时间的测量。</strong>有效区域也由解析任务决定，例如图表中的数据需要识别时，图表就是有效内容。</p>"
       },
       {
         "title": "空白为什么也会占计算：从图像块到视觉 Token",
-        "body": "<p>模型看到的是像素。预处理通常把页面划成小块，再把每块变成一串数字，这串数字称为向量。视觉 Token 是模型处理图像时使用的表示单位；这里先用一个小块对应一个 Token 来说明。空白块对人没有新内容，但只要它留在输入里，仍会占据位置并参与计算。</p><div data-widget=\"tokens\"></div><p>上图只演示输入面积与图像块数量的关系。真实模型还会缩放、合并表示并受预算限制，实际 Token 数要看预处理结果。</p><details class=\"optional-detail\"><summary>进阶：哪些量会随分辨率增长？</summary><p>固定图像块大小时，宽高各放大 2 倍，面积与块数约变为 4 倍。如果一层要让每个 Token 都参考其他所有 Token，就需要计算两两关系：Token 数变为 4 倍，关系数量约变为 4×4＝16 倍。这说明整页提高分辨率可能迅速增加计算。真实耗时还包含解码与调度，不能照这个倍数直接换算。</p></details>"
+        "body": "<p>面积比例说明页面有空白，但计算并不直接按面积计费。要看模型实际处理什么，需要从图像块说起。模型看到的是像素；预处理通常把页面划成小块，再把每块变成一串数字，这串数字称为向量。视觉 Token 是模型处理图像时使用的表示单位；这里先用一个小块对应一个 Token 来说明。空白块对人没有新内容，但只要它留在输入里，仍会占据位置并参与计算。</p><div data-widget=\"tokens\"></div><p>上图只演示输入面积与图像块数量的关系。真实模型还会缩放、合并表示并受预算限制，实际 Token 数要看预处理结果。</p><details class=\"optional-detail\"><summary>进阶：哪些量会随分辨率增长？</summary><p>固定图像块大小时，宽高各放大 2 倍，面积与块数约变为 4 倍。如果一层要让每个 Token 都参考其他所有 Token，就需要计算两两关系：Token 数变为 4 倍，关系数量约变为 4×4＝16 倍。这说明整页提高分辨率可能迅速增加计算。真实耗时还包含解码与调度，不能照这个倍数直接换算。</p></details>"
       },
       {
         "title": "粗阶段找范围，细阶段保留内容细节",
-        "body": "<p>把整页缩得很小会损失公式下标等细节。作者让布局模块先接收整页图像，输出有效区域的位置、类别和阅读顺序。系统按框从原图裁出区域，再交给识别模型读内容。“粗”阶段先定范围与结构，“细”阶段在区域内看细节；减少无关区域，才有机会把识别计算集中到需要读的部分。</p><div data-widget=\"pipeline\" data-selected=\"0\"></div><p>这样做同时缩短了单个识别任务需要生成的内容。多个区域可以组织成批量输入，但并行程度和收益取决于后端、区域数量及显存，不是裁图后自然得到的固定加速。</p>"
+        "body": "<p>把两个事实放在一起，就能看出作者为什么选择先找区域。整页缩得很小会损失公式下标等细节；整页保持高分辨率，又会把大量空白和装饰一起送进模型。作者让布局模块先接收整页图像，输出有效区域的位置、类别和阅读顺序。系统按框从原图裁出区域，再交给识别模型读内容。“粗”阶段先定范围与结构，“细”阶段在区域内看细节；减少无关区域，才有机会把识别计算集中到需要读的部分。</p><div data-widget=\"pipeline\" data-selected=\"0\"></div><p>这样做同时缩短了单个识别任务需要生成的内容。多个区域可以组织成批量输入，但并行程度和收益取决于后端、区域数量及显存，不是裁图后自然得到的固定加速。</p>"
       },
       {
         "title": "这项选择也带来一个必须检查的前提",
@@ -146,7 +146,7 @@ const modules = [
     "example": "",
     "takeaway": "先定位的价值来自信息分布不均；它能否有效，取决于筛选后保留的内容与结构。",
     "talk": "P03 沿 Figure 2 先交代面积观察，再解释整页缩小与高分辨率输入的矛盾。不要把有效面积比例直接换算成 Token 节省率或速度提升。",
-    "bridge": "现在我们知道为什么要先筛选区域。接着把“找区域”和“读内容”接起来，追踪每一步传给下一步的东西。",
+    "bridge": "先找区域只是第一步。框找到之后，还要决定这些区域怎样进入后续模块，以及每一步交出的是图像、坐标、类别还是内容。",
     "facts": "正文 Figure 2、§1、§3.1：区域冗余与两阶段动机；图像块演示：教学简化，不代表模型实测",
     "analysis": "教学图和交互均有单独标记。示例输出未经模型运行；对方法边界的推断不作为论文实测结论。",
     "quiz": [
@@ -233,30 +233,30 @@ const modules = [
     "slides": [
       4
     ],
-    "lead": "现在我们知道为什么要先筛选区域。接着把“找区域”和“读内容”接起来，追踪每一步传给下一步的东西。",
+    "lead": "这一节沿同一页把“找区域”和“读内容”接起来，追踪每一步收到什么、交出什么；先看整体图，再给模块命名。",
     "goal": "能沿数据流解释整套系统，并把位置、类别、顺序和识别内容分别交给正确的模块。",
     "sections": [
       {
         "title": "论文整体图：先认两类工作，再追踪箭头",
-        "body": "<figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-3.png\" data-caption=\"正文 Figure 3 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure 3\"><img src=\"assets/paper/figure-3.png\" alt=\"正文 Figure 3\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure 3</b>　左侧是整页输入，中间先经过 VRFM，再进入区域识别模型，右侧是结构化结果。图下方还画出了不同元素对应的指令。</figcaption></figure><p>VRFM，即有效区域聚焦模块，负责位置、类别和阅读顺序。右边的元素识别模型叫 PaddleOCR-VL-0.9B，是一套视觉语言模型，后文简称 VLM。它接收裁剪区域与任务指令，读出元素内容。这里的 0.9B 是参数规模，不是版本号。组装时再使用 VRFM 保存的顺序，将各区域内容组织成整页结果。</p>"
+        "body": "<p>先看论文的整体图。左侧是整页输入，中间先经过 VRFM，再进入区域识别模型，右侧是结构化结果；图下方还画出了不同元素对应的指令。第一遍只追踪箭头，不必记住每个名称。</p><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-3.png\" data-caption=\"正文 Figure 3 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure 3\"><img src=\"assets/paper/figure-3.png\" alt=\"正文 Figure 3\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure 3</b>　左侧是整页输入，中间先经过 VRFM，再进入区域识别模型，右侧是结构化结果。图下方还画出了不同元素对应的指令。</figcaption></figure><p>VRFM，即有效区域聚焦模块，负责位置、类别和阅读顺序。右边的元素识别模型叫 PaddleOCR-VL-0.9B，是一套视觉语言模型，后文简称 VLM。它接收裁剪区域与任务指令，读出元素内容。这里的 0.9B 是参数规模，不是版本号。组装时再使用 VRFM 保存的顺序，将各区域内容组织成整页结果。</p><p>VRFM 内部还要完成检测、分类和排序。检测、分类和排序各自产生什么，等走到对应模块再展开。先记住两条分工：VRFM 决定“处理哪里、什么类型、放在何处”，识别模型读出“里面是什么”。</p>"
       },
       {
         "title": "点击模块，看它收到了什么、交出了什么",
-        "body": "<div data-widget=\"pipeline\"></div><p>例如表格框的坐标让系统从原图裁出表格，类别 table 指示需要执行表格识别。元素识别模型接收表格图像和对应指令，返回表格内容。组装环节再按 VRFM 先前预测的阅读顺序，把这段内容放到正确位置。</p><div class=\"evidence-note\"><span>教学简化</span>粗阶段由 VRFM 在整页上确定区域位置、类别与顺序；细阶段由元素识别模型读取裁剪图像。教学图将裁剪和组装单独展开，方便追踪接口。</div>"
+        "body": "<p>整体图只画了模块边界。点击任意节点，可以看到它收到什么、交出什么；先沿表格这条线走一遍，再回到整页。</p><div data-widget=\"pipeline\"></div><p>例如表格框的坐标让系统从原图裁出表格，类别 table 指示需要执行表格识别。元素识别模型接收表格图像和对应指令，返回表格内容。组装环节再按 VRFM 先前预测的阅读顺序，把这段内容放到正确位置。</p><div class=\"evidence-note\"><span>教学简化</span>粗阶段由 VRFM 在整页上确定区域位置、类别与顺序；细阶段由元素识别模型读取裁剪图像。教学图将裁剪和组装单独展开，方便追踪接口。</div>"
       },
       {
         "title": "让示例页面逐步变成结构化结果",
-        "body": "<div data-widget=\"document\" data-stage=\"3\"></div><p>用“上一步／下一步”推进。先看到区域边界，再看到类别，随后出现阅读编号。裁剪后的表格还只是图像；只有识别完成后，才能得到里面的方法名与数值。最终输出按区域顺序排列，页面坐标仍可作为程序使用的信息保存。</p>"
+        "body": "<p>接口清楚后，再让示例页面自己走一遍。下面从整页开始，用“上一步／下一步”逐步加上区域、类别和阅读编号；注意每一阶段新增了哪种记录。</p><div data-widget=\"document\" data-stage=\"0\"></div><p>用“上一步／下一步”推进：第一步仍是整页，随后出现区域边界、类别和阅读编号。裁剪后的表格还只是图像；只有识别完成后，才能得到里面的方法名与数值。最终输出按区域顺序排列，页面坐标仍可作为程序使用的信息保存。</p>"
       },
       {
         "title": "给系统中的名称找到各自的位置",
-        "body": "<p class=\"table-hint\">左右滑动，查看表格的全部列。</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"可横向滚动的课程表格\"><table><thead><tr><th>名称</th><th>指什么</th><th>本课程怎样使用</th></tr></thead><tbody><tr><td>PaddleOCR-VL</td><td>论文提出的完整解析方案</td><td>包括布局、区域识别及结果重建。</td></tr><tr><td>PaddleOCR-VL-0.9B</td><td>负责元素识别的视觉语言组件</td><td>包含视觉编码器、Projector 和语言模型。</td></tr><tr><td>ERNIE-4.5-0.3B</td><td>VLM 内部的语言模型</td><td>结合视觉信息与指令生成输出序列。</td></tr></tbody></table></div><p>0.9B 约为 9 亿参数，0.3B 约为 3 亿参数。二者描述模型规模；一页有多少视觉 Token、运行需要多少显存，是另外的问题。下一模块先放大 VRFM 的检测部分。</p>"
+        "body": "<p class=\"table-hint\">左右滑动，查看表格的全部列。</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"可横向滚动的课程表格\"><table><thead><tr><th>名称</th><th>指什么</th><th>本课程怎样使用</th></tr></thead><tbody><tr><td>PaddleOCR-VL</td><td>论文提出的完整解析方案</td><td>包括布局、区域识别及结果重建。</td></tr><tr><td>PaddleOCR-VL-0.9B</td><td>负责元素识别的视觉语言组件</td><td>包含视觉编码器、Projector 和语言模型。</td></tr><tr><td>ERNIE-4.5-0.3B</td><td>VLM 内部的语言模型</td><td>结合视觉信息与指令生成输出序列。</td></tr></tbody></table></div><p>0.9B 约为 9 亿参数，0.3B 约为 3 亿参数。二者描述模型规模；一页有多少视觉 Token、运行需要多少显存，是另外的问题。</p>"
       }
     ],
     "example": "",
     "takeaway": "前一阶段给出“处理哪里、什么类型、放在何处”，后一阶段读出“里面是什么内容”。",
     "talk": "P04 只沿 Figure 3 走一遍，始终追踪同一个表格。每经过一个箭头，都说出传递的是图像、坐标、类别、顺序还是识别内容。",
-    "bridge": "整体图已经清楚。现在放大第一步：页面仍是一张图，系统怎样知道哪一块是正文、哪一块是表格？",
+    "bridge": "整体流程已经走通，但检测框究竟怎样从像素产生，还没有展开。下面只看检测这一段的输入与输出。",
     "facts": "正文 Figure 3、§3.1：整体流程；正文 §3.1.2：VLM 组成与规模",
     "analysis": "教学图和交互均有单独标记。示例输出未经模型运行；对方法边界的推断不作为论文实测结论。",
     "quiz": [
@@ -323,12 +323,12 @@ const modules = [
     "slides": [
       5
     ],
-    "lead": "整体图已经清楚。现在放大第一步：页面仍是一张图，系统怎样知道哪一块是正文、哪一块是表格？",
+    "lead": "页面仍是一张图，系统怎样知道哪一块是正文、哪一块是表格？这一节只看检测的输入输出，以及框和类别怎样变成后续能用的表示。",
     "goal": "理解检测的输入输出，并能解释区域表示、候选框与类别各有什么用。",
     "sections": [
       {
         "title": "检测框是“去哪里裁图”的地址",
-        "body": "<div data-widget=\"document\" data-stage=\"2\"></div><p>在示例上点击表格区域。边界框用左上角与右下角坐标描述一个矩形，例如 (x₁, y₁, x₂, y₂)。这些数值让程序能在原图中找到相应像素。类别则说明这块区域属于 table；框和类别共同描述这个元素，却没有读出任何单元格内容。</p><div class=\"evidence-note\"><span>教学简化</span>交互框和坐标为课程手工设定，用于说明接口，没有实际运行检测模型。</div>"
+        "body": "<p>检测的输出是框和类别。先回到同一页，看看一个框怎样圈住表格，以及它没有交出什么。</p><div data-widget=\"document\" data-stage=\"2\"></div><p>边界框用左上角与右下角坐标描述一个矩形，例如 (x₁, y₁, x₂, y₂)。这些数值让程序能在原图中找到相应像素。类别则说明这块区域属于 table；框和类别共同描述这个元素，却没有读出任何单元格内容。</p><div class=\"evidence-note\"><span>教学简化</span>交互框和坐标为课程手工设定，用于说明接口，没有实际运行检测模型。</div>"
       },
       {
         "title": "RT-DETR 怎样把像素变成候选元素",
@@ -336,17 +336,17 @@ const modules = [
       },
       {
         "title": "回到 Figure 4：哪些信息进入排序网络",
-        "body": "<figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-4-detection.png\" data-caption=\"正文 Figure 4 检测局部 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure 4 检测局部\"><img src=\"assets/paper/figure-4-detection.png\" alt=\"正文 Figure 4 检测局部\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure 4 检测局部</b>　看 RT-DETR 后的框坐标与类别，再看 Coordinate Embedding 和 Class Embedding 如何相加。</figcaption></figure><p>框坐标是数值，类别是标签，不能直接相加。图中的两个映射模块分别把它们变成相同长度的向量：坐标映射称为 Coordinate Embedding，类别映射称为 Class Embedding。两个向量逐项相加，形成同时含位置与类型信息的区域表示，交给排序网络使用。</p><p>图中 M 表示检测候选的数量，N 表示后面待排序的元素数量；候选处理后，数量可以变化。图示包含 background 类别和顺序未知的候选，但论文正文没有列出完整筛选规则。本课程不据此补造具体过滤算法。</p>"
+        "body": "<p>检测器交出框和类别后，排序网络还需要一种能同时利用位置与类型的表示。Figure 4 的检测局部分成几步：先看坐标与类别怎样各自映射，再看它们怎样相加。</p><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-4-detection.png\" data-caption=\"正文 Figure 4 检测局部 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure 4 检测局部\"><img src=\"assets/paper/figure-4-detection.png\" alt=\"正文 Figure 4 检测局部\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure 4 检测局部</b>　看 RT-DETR 后的框坐标与类别，再看 Coordinate Embedding 和 Class Embedding 如何相加。</figcaption></figure><p>框坐标是数值，类别是标签，不能直接相加。图中的两个映射模块分别把它们变成相同长度的向量：坐标映射称为 Coordinate Embedding，类别映射称为 Class Embedding。两个向量逐项相加，形成同时含位置与类型信息的区域表示，交给排序网络使用。</p><p>图中 M 表示检测候选的数量，N 表示后面待排序的元素数量；候选处理后，数量可以变化。图示包含 background 类别和顺序未知的候选，但论文正文没有列出完整筛选规则。本课程不据此补造具体过滤算法。</p>"
       },
       {
         "title": "两个输出，通向不同的后续工作",
-        "body": "<p class=\"table-hint\">左右滑动，查看表格的全部列。</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"可横向滚动的课程表格\"><table><thead><tr><th>已有信息</th><th>后续用途</th><th>尚未得到的内容</th></tr></thead><tbody><tr><td>区域边界框</td><td>裁剪元素图像；为排序提供位置信息</td><td>文字、单元格内容、公式符号</td></tr><tr><td>元素类别</td><td>参与排序；选择合适识别任务</td><td>元素内部的详细结构</td></tr><tr><td>坐标与类别的向量表示</td><td>交给阅读顺序网络建模关系</td><td>整页最终阅读排列</td></tr></tbody></table></div><p>这些框已经告诉我们“去哪里看”，但双栏页面仍有多种排列方式。下一模块解释网络怎样判断先后。</p>"
+        "body": "<p class=\"table-hint\">左右滑动，查看表格的全部列。</p><div class=\"table-scroll\" tabindex=\"0\" role=\"region\" aria-label=\"可横向滚动的课程表格\"><table><thead><tr><th>已有信息</th><th>后续用途</th><th>尚未得到的内容</th></tr></thead><tbody><tr><td>区域边界框</td><td>裁剪元素图像；为排序提供位置信息</td><td>文字、单元格内容、公式符号</td></tr><tr><td>元素类别</td><td>参与排序；选择合适识别任务</td><td>元素内部的详细结构</td></tr><tr><td>坐标与类别的向量表示</td><td>交给阅读顺序网络建模关系</td><td>整页最终阅读排列</td></tr></tbody></table></div><p>这些框已经告诉我们“去哪里看”，但双栏页面仍有多种排列方式。</p>"
       }
     ],
     "example": "",
     "takeaway": "检测阶段把图像变成位置和类型；内容识别与阅读顺序仍需后续模块完成。",
     "talk": "P05 先指框坐标，再指类别，分别说明裁图和任务选择的用途。补充解释特征时只讲“像素变成可学习的数字表示”，随后回到 Figure 4。",
-    "bridge": "检测交出了位置和类别。它们能告诉我们页面怎么排，却不能直接决定读者应该沿着哪条路径读下去。",
+    "bridge": "有了框和类别，还不能决定阅读路径；双栏页面上，同一高度的左右两栏谁先谁后，需要另一套判断。",
     "facts": "正文 Figure 4、§3.1.1：检测、嵌入及排序关系；RT-DETR 通用机制：教学概述，未补充未披露配置",
     "analysis": "教学图和交互均有单独标记。示例输出未经模型运行；对方法边界的推断不作为论文实测结论。",
     "quiz": [
@@ -413,20 +413,20 @@ const modules = [
     "slides": [
       6
     ],
-    "lead": "检测交出了位置和类别。它们能告诉我们页面怎么排，却不能直接决定读者应该沿着哪条路径读下去。",
+    "lead": "这一节先用四区域示例比较两种读法，再拆开 Pointer Network 的关系建模与后处理。",
     "goal": "能用四区域示例解释成对顺序预测，并说明关系矩阵怎样经过后处理得到排列。",
     "sections": [
       {
         "title": "用同一页双栏文档，试一次按高度排序",
-        "body": "<div data-widget=\"order\"></div><p>点“按高度交叉读”，看看左栏与右栏在相近高度的段落怎样被接在一起。再切换“按栏连续读”。第二种路径在这张教学页面上保持了栏内语义连续。真实页面还有跨栏标题、图注和表格，不能仅靠某一个坐标排序规则解决所有情况。</p>"
+        "body": "<p>四个区域排在一页双栏正文上。只按纵坐标从高到低读，左右栏会在相近高度被接在一起；按栏连续读，则先把左栏读完再转到右栏。同一组区域，两种读法会得到不同的拼接结果。</p><div data-widget=\"order\"></div><p>按高度交叉读时，左栏上段之后接右栏上段，语义发生跳转；按栏连续读时，左栏两段先读完。这个例子说明，区域位置不足以单独决定顺序，还需要学习区域之间的关系。真实页面还有跨栏标题、图注和表格，不能靠一条坐标规则解决所有情况。</p><div class=\"evidence-note\"><span>教学示例</span>四区域与两种读法均为教学示例，没有实际运行排序模型。</div>"
       },
       {
         "title": "先把每个区域写成网络能处理的表示",
-        "body": "<p>VRFM 中负责学习区域先后关系的部分，论文称为 Pointer Network，即指针网络。下面将它的关系建模、成对打分和后处理拆开解释，避免把网络内部的 Head（关系头）当成整个排序流程。</p><p>Figure 4 中，坐标嵌入告诉网络区域的位置与范围，类别嵌入告诉网络它是标题、正文还是图表。嵌入就是把离散标签或坐标数值转换成一串可学习的数字。两种嵌入相加后，每个区域都有一个表示。</p><p>这些表示经过 6 层 Transformer。理解这里的用途，只需要知道：每个区域可以参考其他区域的信息，再更新自己的表示。这个“选择参考谁、参考多少”的过程称为注意力。层层处理后，区域表示包含了与页面其他元素的关系线索。</p><p>同在顶部的两个区域，若一个是通栏标题、另一个是正文，它们需要的关系不同。把类别与位置一起提供给网络，正是让它学习这种区别。</p>"
+        "body": "<p>VRFM 中负责学习区域先后关系的部分，论文称为 Pointer Network，即指针网络。它负责判断区域之间的先后，不负责读出区域里的文字；输出是区域对的关系分数，再由后处理还原整页排列。下面把关系建模、成对打分和后处理拆开解释，避免把网络内部的 Head（关系头）当成整个排序流程。</p><p>Figure 4 中，坐标嵌入告诉网络区域的位置与范围，类别嵌入告诉网络它是标题、正文还是图表。嵌入就是把离散标签或坐标数值转换成一串可学习的数字。两种嵌入相加后，每个区域都有一个表示。</p><p>这些表示经过 6 层 Transformer。理解这里的用途，只需要知道：每个区域可以参考其他区域的信息，再更新自己的表示。这个“选择参考谁、参考多少”的过程称为注意力。层层处理后，区域表示包含了与页面其他元素的关系线索。</p><p>同在顶部的两个区域，若一个是通栏标题、另一个是正文，它们需要的关系不同。把类别与位置一起提供给网络，正是让它学习这种区别。</p>"
       },
       {
         "title": "从区域表示，得到“谁在谁前面”的矩阵",
-        "body": "<figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-4.png\" data-caption=\"正文 Figure 4 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure 4\"><img src=\"assets/paper/figure-4.png\" alt=\"正文 Figure 4\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure 4</b>　上排先看 Transformer ×6 与 Head；下排绿色框解释 Head，粉色框解释排序后处理。</figcaption></figure><p>关系头是专门给区域对打分的小模块。它对每个区域的向量各做两种可学习的数值变换，这一步叫投影，结果记为 Q 和 K。将第 i 个区域的 Q 与第 j 个区域的 K 逐项相乘再求和，即点积，得到一项关系分数。对 N 个区域两两计算，就形成 N×N 的矩阵。</p><p>掩码决定哪些格子参与这次计算；Sigmoid 将分数变为 0 到 1 之间的值，用于预测相对阅读关系。随后还需要后处理，才能得到区域排列。</p><div class=\"evidence-note\"><span>教学简化</span>“第 i 个区域先于第 j 个区域”是本页教学矩阵采用的方向约定。原图给出 Triagle Mask、Complete、列和与 ArgSort；实际实现的矩阵方向及候选顺序必须与其配套，不能只照搬一个三角矩阵。</div>"
+        "body": "<p>Figure 4 把排序分支拆成上排的关系建模和下排的后处理。先看 Transformer ×6 怎样更新区域表示，再看 Head 里的 Q/K 与掩码怎样产生关系分数；读完图，再回到矩阵。</p><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-4.png\" data-caption=\"正文 Figure 4 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure 4\"><img src=\"assets/paper/figure-4.png\" alt=\"正文 Figure 4\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure 4</b>　上排先看 Transformer ×6 与 Head；下排绿色框解释 Head，粉色框解释排序后处理。</figcaption></figure><p>关系头是专门给区域对打分的小模块。它对每个区域的向量各做两种可学习的数值变换，这一步叫投影，结果记为 Q 和 K。将第 i 个区域的 Q 与第 j 个区域的 K 逐项相乘再求和，即点积，得到一项关系分数。对 N 个区域两两计算，就形成 N×N 的矩阵。</p><p>掩码决定哪些格子参与这次计算；Sigmoid 将分数变为 0 到 1 之间的值，用于预测相对阅读关系。随后还需要后处理，才能得到区域排列。</p><div class=\"evidence-note\"><span>教学简化</span>“第 i 个区域先于第 j 个区域”是本页教学矩阵采用的方向约定。原图给出 Triagle Mask、Complete、列和与 ArgSort；实际实现的矩阵方向及候选顺序必须与其配套，不能只照搬一个三角矩阵。</div>"
       },
       {
         "title": "用四区域矩阵看懂后处理的作用",
@@ -434,13 +434,13 @@ const modules = [
       },
       {
         "title": "顺序预测交给识别与重建怎样使用",
-        "body": "<p>排序结果保存为区域的阅读位置。区域内部内容仍由 VLM 识别；最终组装按预测顺序放置各块结果。这样页面结构的判断与区域内容的生成被分开处理。下一模块就进入这些裁剪区域的内部。</p><details class=\"optional-detail\"><summary>对照真实页面：补充材料的阅读顺序案例</summary><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-s12.png\" data-caption=\"补充材料 Figure S12 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure S12\"><img src=\"assets/paper/figure-s12.png\" alt=\"补充材料 Figure S12\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure S12</b>　先找页面上的区域编号，再沿编号检查跨栏与图文之间的转移。它展示论文结果，不等于上方四区域示例。</figcaption></figure></details>"
+        "body": "<p>排序结果保存为区域的阅读位置。区域内部内容仍由 VLM 识别；最终组装按预测顺序放置各块结果。这样页面结构的判断与区域内容的生成被分开处理。</p><details class=\"optional-detail\"><summary>对照真实页面：补充材料的阅读顺序案例</summary><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-s12.png\" data-caption=\"补充材料 Figure S12 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure S12\"><img src=\"assets/paper/figure-s12.png\" alt=\"补充材料 Figure S12\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure S12</b>　先找页面上的区域编号，再沿编号检查跨栏与图文之间的转移。它展示论文结果，不等于上方四区域示例。</figcaption></figure></details>"
       }
     ],
     "example": "",
     "takeaway": "阅读顺序依赖区域关系；关系网络给出先后证据，后处理再把证据变成排列。",
     "talk": "P06 先让听众看到按行交叉读的错误，再沿 Figure 4 讲坐标与类别表示、关系建模、矩阵及后处理。四区域矩阵只解释排序直觉，明确它是无冲突教学示例。",
-    "bridge": "现在每个区域有了位置、类型与阅读位置。但裁下来的公式仍然只是像素。接下来要让模型把像素转换成能够保存的内容。",
+    "bridge": "顺序确定后，区域内部仍然只是像素；公式的上下标怎样变成可保存的 LaTeX，是下一段要解决的问题。",
     "facts": "正文 Figure 4、§3.1.1：6 层 Transformer、Q/K 关系头及后处理；正文 §3.3.1：排序训练；四区域矩阵：教学示例数据，未运行模型",
     "analysis": "教学图和交互均有单独标记。示例输出未经模型运行；对方法边界的推断不作为论文实测结论。",
     "quiz": [
@@ -508,16 +508,16 @@ const modules = [
     "slides": [
       7
     ],
-    "lead": "现在每个区域有了位置、类型与阅读位置。但裁下来的公式仍然只是像素。接下来要让模型把像素转换成能够保存的内容。",
+    "lead": "这一节跟着一个公式区域，看它怎样经过视觉编码、表示映射和语言解码，变成可保存的内容；最后再回到整页组装。",
     "goal": "能区分视觉编码、表示映射和语言解码，并解释动态分辨率与任务指令的作用。",
     "sections": [
       {
         "title": "先跟着一个公式走，别急着记三个名字",
-        "body": "<div data-widget=\"vlm\"></div><p>选择“公式”，再依次点击三个模块。视觉编码器先从公式图像形成表示，Projector 将这些表示转换成语言模型可接收的形式，语言模型结合 Formula Recognition 指令生成 LaTeX。上标、分式与括号必须以正确关系输出，单纯把符号列出来还不够。</p><div class=\"evidence-note\"><span>教学简化</span>交互中的公式、数字特征格及输出都是教学示意，不能当成模型的真实隐藏特征或预测结果。</div>"
+        "body": "<p>公式区域裁下来后只是一张像素图，输出却要保留上下标和分式。先跟着这个公式走一遍：视觉编码器、Projector 和语言模型各把什么交给下一步。</p><div data-widget=\"vlm\"></div><p>视觉编码器先从公式图像形成表示，Projector 将这些表示转换成语言模型可接收的形式，语言模型结合 Formula Recognition 指令生成 LaTeX。上标、分式与括号必须以正确关系输出，单纯把符号列出来还不够。</p><div class=\"evidence-note\"><span>教学简化</span>交互中的公式、数字特征格及输出都是教学示意，不能当成模型的真实隐藏特征或预测结果。</div>"
       },
       {
         "title": "对照原图：三个步骤在论文里画在哪里？",
-        "body": "<figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-3-vlm.png\" data-caption=\"正文 Figure 3 局部：元素识别模型 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure 3 局部：元素识别模型\"><img src=\"assets/paper/figure-3-vlm.png\" alt=\"正文 Figure 3 局部：元素识别模型\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure 3 局部：元素识别模型</b>　上方 Vision Encoder 对应视觉编码，下方 LLM Decoder 对应语言生成。中间的 Projector 未在这张整体图中单列，其两层 MLP 结构由正文 §3.1.2 说明。</figcaption></figure><p>回看交互中的三步：原图把编码器与语言模型画成两个大框，正文再补充它们之间的连接方式。区域裁剪图和任务指令从图下方进入这一分支；模型输出交给右侧的文档重建流程。原图是总览，教学图把其中一条连接展开，方便追踪数据。</p>"
+        "body": "<p>交互图把三个步骤展开成教学流程，论文原图只画整体结构。先看 Figure 3 的局部：上方 Vision Encoder 对应视觉编码，下方 LLM Decoder 对应语言生成；中间那条连接在总览里没有单独画出。</p><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-3-vlm.png\" data-caption=\"正文 Figure 3 局部：元素识别模型 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure 3 局部：元素识别模型\"><img src=\"assets/paper/figure-3-vlm.png\" alt=\"正文 Figure 3 局部：元素识别模型\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure 3 局部：元素识别模型</b>　上方 Vision Encoder 对应视觉编码，下方 LLM Decoder 对应语言生成。中间的 Projector 未在这张整体图中单列，其两层 MLP 结构由正文 §3.1.2 说明。</figcaption></figure><p>回看交互中的三步：原图把编码器与语言模型画成两个大框，正文再补充它们之间的连接方式。区域裁剪图和任务指令从图下方进入这一分支；模型输出交给右侧的文档重建流程。原图是总览，教学图把其中一条连接展开，方便追踪数据。</p>"
       },
       {
         "title": "视觉编码器：让图像细节进入可计算的表示",
@@ -533,13 +533,13 @@ const modules = [
       },
       {
         "title": "再把内容放回页面",
-        "body": "<p>识别完成后，每个区域有了可读内容，但输出文件还需要顺序和类别。组装程序把这些内容与 VRFM 的布局结果结合，得到整页文档。语言模型的逐步解码顺序与页面区域的阅读顺序属于不同层次。下一模块讨论模型怎样从监督数据学会这些工作。</p>"
+        "body": "<p>识别完成后，每个区域有了可读内容，但输出文件还需要顺序和类别。组装程序把这些内容与 VRFM 的布局结果结合，得到整页文档。语言模型的逐步解码顺序与页面区域的阅读顺序属于不同层次。</p>"
       }
     ],
     "example": "",
     "takeaway": "视觉编码保留图像线索，Projector 映射表示，语言解码生成内容；页面顺序仍由 VRFM 提供。",
     "talk": "P07 沿一个公式区域讲完整条链，讲到每个模块都说明输入和输出。需要主动修正 PPT 备注中“不切固定图块”和“小字不会被重采样抹掉”的绝对表述，改为动态适配仍受预算限制。",
-    "bridge": "上一模块解释了推理时怎样产生结果。现在反过来问：训练时给模型看什么答案，它才会逐渐学会这些能力？",
+    "bridge": "推理路径已经走通，但模型从哪里学会这些判断还没有说明；训练阶段的监督目标和数据规模，决定这套系统能验证到什么范围。",
     "facts": "正文 §3.1.2：NaViT 风格、Keye-VL、两层 MLP、GELU、ERNIE、3D-RoPE；正文 §3.3.2：OCR、OTSL、LaTeX 与图表训练任务",
     "analysis": "教学图和交互均有单独标记。示例输出未经模型运行；对方法边界的推断不作为论文实测结论。",
     "quiz": [
@@ -623,16 +623,16 @@ const modules = [
     "slides": [
       8
     ],
-    "lead": "上一模块解释了推理时怎样产生结果。现在反过来问：训练时给模型看什么答案，它才会逐渐学会这些能力？",
+    "lead": "这一节反过来看训练：模型从什么答案里学习，三块能力各自对应什么监督，哪些数字是论文报告、哪些只是课程计划。",
     "goal": "能把检测、排序、内容识别对应到监督目标，并区分三套“两阶段”说法。",
     "sections": [
       {
         "title": "先说明监督信息：模型预测与什么比较",
-        "body": "<div data-widget=\"training\"></div><p>训练样本同时提供输入和参考答案。模型先预测，再计算与参考答案的差异，这个差异称为损失。优化器根据损失更新可训练参数。推理则使用已经得到的参数处理新输入，通常没有参考答案参与，也不在这个过程中更新权重。</p><p>检测需要框和类别监督；排序需要区域先后关系；识别需要与区域图像对应的文字或结构序列。它们学的目标不同，不能只用“模型看了很多文档”带过。</p>"
+        "body": "<p>模型在推理时给出答案，但这些参数不是运行时临时学出来的。要理解它们从哪里来，需要看训练时模型拿什么作参照。</p><div data-widget=\"training\"></div><p>训练样本同时提供输入和参考答案。模型先预测，再计算与参考答案的差异，这个差异称为损失。优化器根据损失更新可训练参数。推理则使用已经得到的参数处理新输入，通常没有参考答案参与，也不在这个过程中更新权重。</p><p>检测需要框和类别监督；排序需要区域先后关系；识别需要与区域图像对应的文字或结构序列。它们学的目标不同，不能只用“模型看了很多文档”带过。</p>"
       },
       {
         "title": "数据先经过标注、检查与补充",
-        "body": "<figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-s1.png\" data-caption=\"补充材料 Figure S1 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure S1\"><img src=\"assets/paper/figure-s1.png\" alt=\"补充材料 Figure S1\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure S1</b>　文字数据由自动标注和合成等路径构建，并覆盖不同语言、场景与粒度。</figcaption></figure><p>论文列出公开数据、合成数据、网络文档和内部积累四类来源。自动标注先由文档解析系统 PP-StructureV3 产生初步标签，再让更强 VLM 结合原图修正，之后过滤可能凭空生成的内容，这类错误称为幻觉。模型生成的参考答案叫伪标签，仍需检查质量。</p><p>对于手写、模糊密集文字或特殊表格等难例，作者先分析薄弱点，再有针对性地合成补充数据。正文与补充材料介绍了流程，但没有公开足以完整重建所有内部数据的清单。</p>"
+        "body": "<p>训练数据不是凭空来的。先看补充材料 Figure S1：它把文字数据的来源、自动标注和合成路径画在一起；读图时先认输入来源，再看哪些环节需要人工或模型检查。</p><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/figure-s1.png\" data-caption=\"补充材料 Figure S1 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Figure S1\"><img src=\"assets/paper/figure-s1.png\" alt=\"补充材料 Figure S1\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Figure S1</b>　文字数据由自动标注和合成等路径构建，并覆盖不同语言、场景与粒度。</figcaption></figure><p>论文列出公开数据、合成数据、网络文档和内部积累四类来源。自动标注先由文档解析系统 PP-StructureV3 产生初步标签，再让更强 VLM 结合原图修正，之后过滤可能凭空生成的内容，这类错误称为幻觉。模型生成的参考答案叫伪标签，仍需检查质量。</p><p>对于手写、模糊密集文字或特殊表格等难例，作者先分析薄弱点，再有针对性地合成补充数据。正文与补充材料介绍了流程，但没有公开足以完整重建所有内部数据的清单。</p>"
       },
       {
         "title": "VRFM：先把元素找出来，再学习相对顺序",
@@ -650,7 +650,7 @@ const modules = [
     "example": "",
     "takeaway": "检测、排序和识别各有监督目标；训练阶段的划分与推理阶段的分工应分别说明。",
     "talk": "P08 先解释框、类别、顺序和内容各需要什么参考答案，再沿两条训练线讲关键数字。回到课堂时只保留最重要的阶段与数据规模，细配置留作追问。",
-    "bridge": "方法已经讲完整。接下来逐项检查：结果是否更好、VRFM 是否有用、速度是否更快。每个结论都需要对应的实验条件。",
+    "bridge": "训练讲完，接下来要读论文的实验：整体分数、布局对照和效率数据分别能支持什么结论。",
     "facts": "正文 §3.2–3.3、Table 1：数据与训练；补充材料 §I、Figure S1：数据构建细节",
     "analysis": "教学图和交互均有单独标记。示例输出未经模型运行；对方法边界的推断不作为论文实测结论。",
     "quiz": [
@@ -720,34 +720,34 @@ const modules = [
       11,
       12
     ],
-    "lead": "方法已经讲完整。接下来逐项检查：结果是否更好、VRFM 是否有用、速度是否更快。每个结论都需要对应的实验条件。",
+    "lead": "这一节逐项检查：结果是否更好、VRFM 是否有用、速度是否更快。每个结论都需要对应的实验条件和比较对象；先定义指标，再读三组实验。",
     "goal": "能解释指标、读懂主实验与消融，并在报告速度和显存时说明比较对象与限制。",
     "sections": [
       {
         "title": "评测前先把四类错误分开",
-        "body": "<div data-widget=\"metrics\"></div><p>OmniDocBench v1.5 包含 1,355 页、9 类文档，提供文字、公式、表格和阅读顺序标注。页面级评测让完整系统处理整页，再将结果与标注匹配；元素级评测先用标注框裁好区域，重点检查识别能力。</p><p>文字 Edit 统计把预测改成标注需要插入、删除和替换多少个字符，再用长度归一化。官方代码对匹配文本使用预测与标注长度的较大值作分母，先在每页内累计，再跨页平均。它与把全部字符合并计算的字符错误率（CER）口径不同，不能直接替代。</p><p>公式 CDM 将预测和标注的 LaTeX 渲染成图像，比较字符与空间位置，减少不同 LaTeX 写法的影响；它不负责证明两个式子在数学上等价。TEDS 检查表格结构和内容，TEDS-S 侧重结构；阅读顺序 Edit 比较匹配元素的排列。</p><div class=\"formula-block\">Overall = [100 × (1 − Text Edit) + Formula CDM + Table TEDS] ÷ 3</div><p>此处 CDM 与 TEDS 使用百分制，三项等权平均。阅读顺序与 TEDS-S 单独报告，不进入这个 Overall。92.62 因此是综合得分，不能解释为 92.62% 的页面全部正确。</p>"
+        "body": "<p>先看一组页面可能出现的错误：文字漏字、公式符号位置错、表格结构错、阅读顺序错。四类错误对应不同指标；先把它们分开，后面的分数才有含义。</p><div data-widget=\"metrics\"></div><p>OmniDocBench v1.5 包含 1,355 页、9 类文档，提供文字、公式、表格和阅读顺序标注。页面级评测让完整系统处理整页，再将结果与标注匹配；元素级评测先用标注框裁好区域，重点检查识别能力。</p><p>文字 Edit 统计把预测改成标注需要插入、删除和替换多少个字符，再用长度归一化。官方代码对匹配文本使用预测与标注长度的较大值作分母，先在每页内累计，再跨页平均。它与把全部字符合并计算的字符错误率（CER）口径不同，不能直接替代。</p><p>公式 CDM 将预测和标注的 LaTeX 渲染成图像，比较字符与空间位置，减少不同 LaTeX 写法的影响；它不负责证明两个式子在数学上等价。TEDS 检查表格结构和内容，TEDS-S 侧重结构；阅读顺序 Edit 比较匹配元素的排列。</p><div class=\"formula-block\">Overall = [100 × (1 − Text Edit) + Formula CDM + Table TEDS] ÷ 3</div><p>此处 CDM 与 TEDS 使用百分制，三项等权平均。阅读顺序与 TEDS-S 单独报告，不进入这个 Overall。92.62 因此是综合得分，不能解释为 92.62% 的页面全部正确。</p>"
       },
       {
         "title": "主实验：完整系统在同一基准上表现怎样？",
-        "body": "<div data-widget=\"results\"></div><p>Table 2 比较传统 Pipeline、通用 VLM 和专用文档 VLM。PP-StructureV3、MinerU2.5、PaddleOCR-VL-L 的 Overall 分别为 86.73、90.67、92.62。与表中最强对照 MinerU2.5 相比，L 配置高 1.95 分。点击指标切换，检查优势来自哪些分项。</p><p>PaddleOCR-VL-L 的文字、公式与表格分项更好；阅读顺序 Edit 为 0.043，MinerU2.5 为 0.044，差距较小。实验支持论文所列条件下的整体竞争力，但系统之间还有训练数据、实现和配置差异，主表不能单独确定每个模块贡献了多少。</p><details class=\"optional-detail\"><summary>查看 Table 2 原表与 S／M／L 配置</summary><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/table-2.png\" data-caption=\"正文 Table 2 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Table 2\"><img src=\"assets/paper/table-2.png\" alt=\"正文 Table 2\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Table 2</b>　原表同时列出参数量、视觉 Token 和各项成绩。</figcaption></figure><p>S／M／L 是同一权重的不同输入分辨率预算，最大像素数分别为 235200、392000、627200，最低为 3136。对应视觉 Token 数 1898、2259、2561 是表中报告量，不是每个区域的固定上限。官方榜单另有 92.86 记录；与正文 92.62 的具体差异原因尚未确认，本课程以正文为主。</p></details>"
+        "body": "<p>指标定义好之后，看完整系统在同一基准上的表现。先看 Overall 的三根柱子，再切换 Text Edit、CDM、TEDS 和阅读顺序，比较优势来自哪些分项。</p><div data-widget=\"results\"></div><p>Table 2 比较传统 Pipeline、通用 VLM 和专用文档 VLM。PP-StructureV3、MinerU2.5、PaddleOCR-VL-L 的 Overall 分别为 86.73、90.67、92.62。与表中最强对照 MinerU2.5 相比，L 配置高 1.95 分。点击指标切换，检查优势来自哪些分项。</p><p>PaddleOCR-VL-L 的文字、公式与表格分项更好；阅读顺序 Edit 为 0.043，MinerU2.5 为 0.044，差距较小。实验支持论文所列条件下的整体竞争力，但系统之间还有训练数据、实现和配置差异，主表不能单独确定每个模块贡献了多少。</p><details class=\"optional-detail\"><summary>查看 Table 2 原表与 S／M／L 配置</summary><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/table-2.png\" data-caption=\"正文 Table 2 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Table 2\"><img src=\"assets/paper/table-2.png\" alt=\"正文 Table 2\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Table 2</b>　原表同时列出参数量、视觉 Token 和各项成绩。</figcaption></figure><p>S／M／L 是同一权重的不同输入分辨率预算，最大像素数分别为 235200、392000、627200，最低为 3136。对应视觉 Token 数 1898、2259、2561 是表中报告量，不是每个区域的固定上限。官方榜单另有 92.86 记录；与正文 92.62 的具体差异原因尚未确认，本课程以正文为主。</p></details>"
       },
       {
         "title": "VRFM 对照：固定识别模型后，布局方案还重要吗？",
-        "body": "<div data-widget=\"ablation\"></div><p>Table S2 固定 PaddleOCR-VL-0.9B，比较 PP-DocLayout 与 VRFM。原表的 Acc.(%) 从 89.96 变为 92.62，同时视觉 Token 从 2347 增为 2561。这支持 VRFM 整体方案在该对照中更有效；得分提升没有伴随更少 Token，因此不能只用“压得更短”解释。</p><p>同表还给出 Qwen3-VL-8B 为 89.60、DocKylin 裁剪后为 87.75、VRFM 配合为 90.37。它说明一种 Token 缩减方式可能损失性能，结构处理方式需要验证。不同识别模型的对照还有训练和适配差异，不能归纳为小模型普遍优于大模型。</p><div class=\"evidence-note\"><span>论文事实与证据边界</span>Table S2 将指标标为 Acc.(%)，未详述计算口径。它与 Table 2 的 Overall 出现相同数值，但目前不能据此断言两者完全同口径，也不能断言只是巧合。课程保留各自名称。该对照未独立拆出 Pointer Network、3D-RoPE、Projector 的贡献。</div><details class=\"optional-detail\"><summary>查看真实消融表</summary><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/table-s2.png\" data-caption=\"补充材料 Table S2 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Table S2\"><img src=\"assets/paper/table-s2.png\" alt=\"补充材料 Table S2\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Table S2</b>　比较时先固定识别模型，再读布局方案、视觉 Token 和得分。</figcaption></figure></details>"
+        "body": "<p>主实验比较的是完整系统，分不清布局方案的单独作用。下面固定同一个识别模型，只换布局方案；先看分数和 Token 各变了多少，再判断这组对照能支持什么。</p><div data-widget=\"ablation\"></div><p>Table S2 固定 PaddleOCR-VL-0.9B，比较 PP-DocLayout 与 VRFM。原表的 Acc.(%) 从 89.96 变为 92.62，同时视觉 Token 从 2347 增为 2561。这支持 VRFM 整体方案在该对照中更有效；得分提升没有伴随更少 Token，因此不能只用“压得更短”解释。</p><p>同表还给出 Qwen3-VL-8B 为 89.60、DocKylin 裁剪后为 87.75、VRFM 配合为 90.37。它说明一种 Token 缩减方式可能损失性能，结构处理方式需要验证。不同识别模型的对照还有训练和适配差异，不能归纳为小模型普遍优于大模型。</p><div class=\"evidence-note\"><span>论文事实与证据边界</span>Table S2 将指标标为 Acc.(%)，未详述计算口径。它与 Table 2 的 Overall 出现相同数值，但目前不能据此断言两者完全同口径，也不能断言只是巧合。课程保留各自名称。该对照未独立拆出 Pointer Network、3D-RoPE、Projector 的贡献。</div><details class=\"optional-detail\"><summary>查看真实消融表</summary><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/table-s2.png\" data-caption=\"补充材料 Table S2 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Table S2\"><img src=\"assets/paper/table-s2.png\" alt=\"补充材料 Table S2\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Table S2</b>　比较时先固定识别模型，再读布局方案、视觉 Token 和得分。</figcaption></figure></details>"
       },
       {
         "title": "效率实验：吞吐提高，是否也更省显存？",
-        "body": "<div data-widget=\"efficiency\"></div><p>Table 7 中，PaddleOCR-VL-L 每秒处理 1.6192 页，MinerU2.5 为 1.0574 页，相对提高约 53.1%。平均显存分别为 42.1 GB 和 41.9 GB，二者接近。论文约 46% 的显存降低是相对 dots.ocr；速度和显存结论各有自己的比较对象。</p><p>正文描述单张 A100、vLLM 0.10.2，按 512 的批量处理 PDF。文中没有充分展开这与服务并发、区域批量的对应关系，因此不应把它直接抄成自己的所有 batch 参数。605.2 秒乘 1.6192 pages/s 约为 980 页，是根据表格推算，论文未说明它与 1,355 页精度评测集的关系。</p><details class=\"optional-detail\"><summary>查看 Table 7 原表</summary><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/table-7.png\" data-caption=\"正文 Table 7 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Table 7\"><img src=\"assets/paper/table-7.png\" alt=\"正文 Table 7\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Table 7</b>　阅读单位：总时间、页／秒、Token／秒与平均显存。</figcaption></figure><p>参数量只描述权重规模。运行显存还包含激活、缓存、并发及服务预留，0.9B 不等于系统只需存下 0.9B 个权重。RTX 3090 上的吞吐与显存必须实测。</p></details>"
+        "body": "<p>最后看速度与显存。两种模式比较的都是 MinerU2.5 与 PaddleOCR-VL-L：页面吞吐的单位是 pages/s，平均显存的单位是 GB；先看柱子的单位和差值，再对回 Table 7 的条件。</p><div data-widget=\"efficiency\"></div><p>Table 7 中，PaddleOCR-VL-L 每秒处理 1.6192 页，MinerU2.5 为 1.0574 页，相对提高约 53.1%。平均显存分别为 42.1 GB 和 41.9 GB，二者接近。论文约 46% 的显存降低是相对 dots.ocr；速度和显存结论各有自己的比较对象。</p><p>正文描述单张 A100、vLLM 0.10.2，按 512 的批量处理 PDF。文中没有充分展开这与服务并发、区域批量的对应关系，因此不应把它直接抄成自己的所有 batch 参数。605.2 秒乘 1.6192 pages/s 约为 980 页，是根据表格推算，论文未说明它与 1,355 页精度评测集的关系。</p><details class=\"optional-detail\"><summary>查看 Table 7 原表</summary><figure class=\"paper-figure\"><button class=\"zoom-image\" data-zoom=\"assets/paper/table-7.png\" data-caption=\"正文 Table 7 · 仅裁剪，未修改图内内容\" aria-label=\"放大 Table 7\"><img src=\"assets/paper/table-7.png\" alt=\"正文 Table 7\" loading=\"lazy\"><span>点击查看高清原图 ↗</span></button><figcaption><b>论文原图 · Table 7</b>　阅读单位：总时间、页／秒、Token／秒与平均显存。</figcaption></figure><p>参数量只描述权重规模。运行显存还包含激活、缓存、并发及服务预留，0.9B 不等于系统只需存下 0.9B 个权重。RTX 3090 上的吞吐与显存必须实测。</p></details>"
       },
       {
         "title": "元素级实验补充什么，留下什么问题？",
-        "body": "<p>Tables 3–5 使用表格块、文字块和公式块评测，减少布局定位对识别结果的干扰。公式块 CDM 为 0.9404，换成百分制是 94.04；页面级 CDM 写为百分制的 90.90。即使统一刻度，输入、匹配和统计条件仍不同，不能把两者相减后直接当成定位造成的损失。</p><p>Table 3 的表格结构指标中，MinerU2.5 的 Structural TEDS 高于 PaddleOCR-VL-L。应当保留这个细节，整体得分领先并不意味着所有子指标都领先。图表结果来自内部基准，也限制了外部完全复核的便利性。</p><p>以上证据足以支持论文方法在所测条件下的准确性与效率价值。至于当前机器能否复现、差异发生在哪里，需要下一模块中的真实运行与错误分析。</p>"
+        "body": "<p>Tables 3–5 使用表格块、文字块和公式块评测，减少布局定位对识别结果的干扰。公式块 CDM 为 0.9404，换成百分制是 94.04；页面级 CDM 写为百分制的 90.90。即使统一刻度，输入、匹配和统计条件仍不同，不能把两者相减后直接当成定位造成的损失。</p><p>Table 3 的表格结构指标中，MinerU2.5 的 Structural TEDS 高于 PaddleOCR-VL-L。应当保留这个细节，整体得分领先并不意味着所有子指标都领先。图表结果来自内部基准，也限制了外部完全复核的便利性。</p><p>以上证据足以支持论文方法在所测条件下的准确性与效率价值。至于当前机器能否复现、差异发生在哪里，需要真实运行与错误分析。</p>"
       }
     ],
     "example": "",
     "takeaway": "先明确每组实验的问题和条件，再读指标；整体领先、模块有效和运行更快需要分别举证。",
     "talk": "P09 先解释四类错误。P10 只讲三种代表方法和分项趋势。P11 固定识别模型读 Table S2。P12 只突出吞吐优势，并明确显存对照与硬件条件。",
-    "bridge": "论文成绩说明作者测到了什么。课堂汇报还需要说明：我们实际运行了哪些步骤，哪些结论能由自己的证据支持。",
+    "bridge": "实验结论有了，最后要把论文放回一次可检查的复现：哪些步骤真正运行过，哪些结果还只是计划。",
     "facts": "正文 Tables 2–7、§4：页面级、元素级与效率实验；补充材料 Table S2、§III.1：VRFM 对照；OmniDocBench v1_5：Overall、匹配与统计口径",
     "analysis": "教学图和交互均有单独标记。示例输出未经模型运行；对方法边界的推断不作为论文实测结论。",
     "quiz": [
@@ -868,7 +868,7 @@ const modules = [
       13,
       14
     ],
-    "lead": "论文成绩说明作者测到了什么。课堂汇报还需要说明：我们实际运行了哪些步骤，哪些结论能由自己的证据支持。",
+    "lead": "论文成绩说明作者测到了什么。课堂汇报还要说明：哪些步骤真正运行过，哪些结论能由自己的证据支持。这一节先固定复现范围，再列证据，最后沿架构定位错误。",
     "goal": "能准确命名复现范围、列出必要证据，并从具体错误回到方法边界。",
     "sections": [
       {
@@ -877,7 +877,7 @@ const modules = [
       },
       {
         "title": "怎样判断该跑全量，还是固定子集",
-        "body": "<div data-widget=\"reproduction\"></div><p>先用覆盖不同文档类型的少量页面，打通完整推理、Markdown 输出和官方评测，尤其提前验证公式 CDM。再测每页耗时，据此估算 1,355 页的工作量。时间不足时使用预先冻结的 180 页分层子集，覆盖 9 类文档并检查表格、公式和布局多样性。</p><p>子集结果只能称为局部推理复现。它可与论文全量成绩讨论，但分数差异也可能来自样本构成。完整测试集全部推理并完成同口径指标后，可以称为全量推理／评测复现，仍没有重做论文训练。</p><p>上一模块的公式评分指标 CDM 也要提前跑通。评测配置中的 CDM_plain 只导出预测公式与参考公式的匹配对；导出后还需实际计算 CDM 得分。有文字与表格成绩，却没有公式 CDM，就缺少 Overall 综合分的一项。</p>"
+        "body": "<p>在开始跑之前，先做一次工作量规划：用实测的每页耗时估算全量要多久，再决定是否需要冻结一个分层子集。下面的输入框只做换算，不是实测结果。</p><div data-widget=\"reproduction\"></div><p>先用覆盖不同文档类型的少量页面，打通完整推理、Markdown 输出和官方评测，尤其提前验证公式 CDM。再测每页耗时，据此估算 1,355 页的工作量。时间不足时使用预先冻结的 180 页分层子集，覆盖 9 类文档并检查表格、公式和布局多样性。</p><p>子集结果只能称为局部推理复现。它可与论文全量成绩讨论，但分数差异也可能来自样本构成。完整测试集全部推理并完成同口径指标后，可以称为全量推理／评测复现，仍没有重做论文训练。</p><p>上一模块的公式评分指标 CDM 也要提前跑通。评测配置中的 CDM_plain 只导出预测公式与参考公式的匹配对；导出后还需实际计算 CDM 得分。有文字与表格成绩，却没有公式 CDM，就缺少 Overall 综合分的一项。</p>"
       },
       {
         "title": "保留哪些文件，别人才能检查结论",
@@ -885,7 +885,7 @@ const modules = [
       },
       {
         "title": "沿架构定位错误，再提出改进",
-        "body": "<div data-widget=\"failures\"></div><p>如果表格完全缺失，先检查是否检测到以及是否进入裁剪；如果框正确但单元格错误，再检查识别结果；如果内容都在却位置交叉，检查排序和组装。这样提出原因有对应证据，避免把所有差异笼统归因于显卡。</p><p>从结构上看，漏检与错裁可能让信息在识别前丢失，区域独立识别也可能缺少跨区域上下文。低置信区域复查和必要的上下文补充是可研究方向，但本论文没有验证这些改进的收益。</p><div class=\"evidence-note\"><span>分析判断</span>交互中的故障开关是机制演示，不是实测错误样本；上述改进属于分析建议。</div>"
+        "body": "<p>有了结果之后，错误要落到具体阶段。下面切换四种情况：正常流程、漏检表格、错裁公式和阅读错序，观察问题先在哪一步出现，再决定检查哪一段证据。</p><div data-widget=\"failures\"></div><p>如果表格完全缺失，先检查是否检测到以及是否进入裁剪；如果框正确但单元格错误，再检查识别结果；如果内容都在却位置交叉，检查排序和组装。这样提出原因有对应证据，避免把所有差异笼统归因于显卡。</p><p>从结构上看，漏检与错裁可能让信息在识别前丢失，区域独立识别也可能缺少跨区域上下文。低置信区域复查和必要的上下文补充是可研究方向，但本论文没有验证这些改进的收益。</p><div class=\"evidence-note\"><span>分析判断</span>交互中的故障开关是机制演示，不是实测错误样本；上述改进属于分析建议。</div>"
       },
       {
         "title": "回到 PPT：怎样结束这场报告",

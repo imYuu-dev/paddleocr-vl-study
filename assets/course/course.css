@@ -31,3 +31,4 @@
 .rehearsal-slides .zoom-image{padding:0}.rehearsal-slides .zoom-image img{max-height:none}
 .rehearsal-header{position:sticky;top:0;z-index:2;background:#fff}
 @media(max-width:760px){.rehearsal-header>button,.rehearsal-slide-nav button{min-height:44px}}
+.goal-after{margin:34px 0 8px;background:#f6f9fe;padding:14px 18px;border-left:3px solid var(--accent)}
